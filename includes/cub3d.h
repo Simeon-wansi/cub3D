@@ -1,15 +1,18 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
-
+# include "minilibx_opengl_20191021/mlx.h"
+#include "./libft/libft.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <stdbool.h>
 
 # define WIDTH 1280 
 # define HEIGHT 720
 
-#define BLOCK 64
+# define BLOCK 64
 # define MAP_WIDTH 24
-
-
 # define LEFT 123
 # define RIGHT 124
 # define W 13
@@ -21,11 +24,14 @@
 
 # define DEBUG 1
 
-# include "minilibx_opengl_20191021/mlx.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <stdbool.h>
+typedef struct s_map
+{
+    char    **board;
+    int     cols;
+    int     rows;
+    int     player_pos_x;
+    int     current_pos_y;
+}   t_map;
 
 
 typedef struct s_player
@@ -33,12 +39,10 @@ typedef struct s_player
     float x;
     float y;
     float angle;
-
     bool key_up;
     bool key_down;
     bool key_left;
     bool key_right;
-
     bool left_rotate;
     bool right_rotate;
 }       t_player;

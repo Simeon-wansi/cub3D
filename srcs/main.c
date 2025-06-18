@@ -39,7 +39,7 @@ void draw_map(t_game *game)
     int x;
 
     map = game->map;
-    color = 0x0000FF; // Blue for walls
+    color = 0x0000FF;
     y = 0;
     while (map[y] != NULL)
     {
@@ -84,7 +84,7 @@ char **get_map(void)
     map[7] = "10000000000000000001";
     map[8] = "10000000000000000001";
     map[9] = "11111111111111111111";
-    map[10] = NULL; // Null-terminate the array
+    map[10] = NULL;
 
 
     return (map);
