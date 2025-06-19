@@ -1,0 +1,111 @@
+# Compiled binaries and executables
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+cub3d
+
+# Object files and libraries
+*.obj
+*.lib
+*.dll
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Core dumps
+core
+core.*
+
+# Temporary files
+*~
+*.swp
+*.swo
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.sublime-*
+.atom/
+*.code-workspace
+
+# Build directories
+build/
+bin/
+obj/
+dist/
+out/
+
+# Test files and maps (if any)
+*.map
+test_maps/
+tests/
+
+# Log files
+*.log
+
+# Memory leak detection files
+*.leak
+valgrind-out.txt
+
+# Norminette cache (for 42 projects)
+.norminette/
+
+# MacOS specific
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Linux specific
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Windows specific
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# Archives
+*.zip
+*.tar.gz
+*.tar.bz2
+*.tar
+*.gz
+*.bz2
+*.7z
+*.rar
+
+# Configuration files that might contain sensitive data
+config.local
+.env
+.env.local
+
+# MinilibX compiled files (keep source but ignore compiled)
+includes/minilibx-linux/libmlx.a
+includes/minilibx-linux/libmlx_Linux.a
+includes/mlx-lin/libmlx.a
+includes/mlx-lin/libmlx_Linux.a
+includes/minilibx_opengl_20191021/libmlx.a
+
+# Makefile dependencies
+*.d
+.depend

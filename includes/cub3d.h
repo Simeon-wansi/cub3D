@@ -3,6 +3,7 @@
 
 # include "minilibx_opengl_20191021/mlx.h"
 #include "./libft/libft.h"
+#include "./libft/arena.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
