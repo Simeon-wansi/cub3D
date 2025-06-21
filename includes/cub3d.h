@@ -19,7 +19,7 @@
 
 # define PI 3.1415926
 
-# define DEBUG 1
+# define DEBUG 0
 
 # include "minilibx_opengl_20191021/mlx.h"
 #include <stdio.h>
