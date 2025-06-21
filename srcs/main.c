@@ -126,6 +126,7 @@ float fixed_dist(float x1, float y1, float x2, float y2, t_game *game)
     float angle;
     float fix_dist;
 
+     
     delta_x = x2 - x1;
     delta_y = y2 - y1;
     angle = atan2(delta_y, delta_x) - game->player.angle;
@@ -202,8 +203,9 @@ int main(void)
 
     init_game(&game);
 
-    mlx_hook(game.win_ptr, 2, 1L << 0, key_press, &game.player);
-    mlx_hook(game.win_ptr, 3, 1L << 1, key_release, &game.player);
+    
+    mlx_hook(game.win_ptr, 2, 0, key_press, &game.player);
+    mlx_hook(game.win_ptr, 3, 0, key_release, &game.player);
 
     mlx_loop_hook(game.mlx_ptr, draw_loop, &game);
 
