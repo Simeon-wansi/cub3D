@@ -6,7 +6,7 @@
 /*   By: hmensah- <hmensah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 19:07:27 by hmensah-          #+#    #+#             */
-/*   Updated: 2025/06/18 20:50:19 by hmensah-         ###   ########.fr       */
+/*   Updated: 2025/06/20 21:21:52 by hmensah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ bool config_map(t_map *map, t_list *map_list, t_arena *arena)
 	if (!map || !map_list || !arena)
 		return (false);
 	map->rows = ft_lstsize(map_list);
-	map->cols = 0;
 	map->board = arena_alloc(arena, sizeof(char **) * (map->rows + 1));
 	current = map_list;
 	i = 0;
