@@ -8,6 +8,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include <stdbool.h>
+#include <fcntl.h>
+#include <unistd.h>
 
 # define WIDTH 1280 
 # define HEIGHT 720
@@ -25,14 +27,46 @@
 
 # define DEBUG 1
 
+typedef struct s_textures
+{
+    char    *north;
+    char    *south;
+    char    *west;
+    char    *east;
+}   t_textures;
+
+typedef struct s_colors
+{
+    int floor_r;
+    int floor_g;
+    int floor_b;
+    int ceiling_r;
+    int ceiling_g;
+    int ceiling_b;
+}   t_colors;
+
 typedef struct s_map
 {
     char    **board;
     int     cols;
     int     rows;
     int     player_pos_x;
-    int     current_pos_y;
+    int     player_pos_y;
+    char    player_dir;
 }   t_map;
+
+typedef struct s_config
+{
+    t_textures  textures;
+    t_colors    colors;
+    t_map       map;
+    bool        parsed_no;
+    bool        parsed_so;
+    bool        parsed_we;
+    bool        parsed_ea;
+    bool        parsed_f;
+    bool        parsed_c;
+}   t_config;
 
 
 typedef struct s_player
@@ -69,5 +103,10 @@ void	init_player(t_player *player);
 int key_press(int keycode, t_player *player);
 int key_release(int keycode, t_player *player);
 void move_player(t_player *player);
+
+// Parser functions
+t_config *parse_cub_file(char *filename, t_arena *arena);
+void print_error(char *message);
+void print_config(t_config *config);
 
 # endif
