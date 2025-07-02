@@ -6,7 +6,7 @@
 /*   By: hmensah- <hmensah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:26:14 by hmensah-          #+#    #+#             */
-/*   Updated: 2025/06/18 20:38:39 by hmensah-         ###   ########.fr       */
+/*   Updated: 2025/05/30 17:26:44 by hmensah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,18 @@
 # define FT_LIST_H
 
 # include "libft.h"
+
+/**
+ * @brief Linked list node structure
+ *
+ * Basic linked list node that can store any type of content
+ * through a void pointer.
+ */
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 /**
  * @brief Create a new list node

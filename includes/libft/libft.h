@@ -6,7 +6,7 @@
 /*   By: hmensah- <hmensah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 18:32:15 by hmensah-          #+#    #+#             */
-/*   Updated: 2025/06/18 20:39:02 by hmensah-         ###   ########.fr       */
+/*   Updated: 2025/05/30 17:21:00 by hmensah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,10 @@
 # include <stdbool.h>
 
 /**
- * @brief Linked list node structure
- *
- * Basic linked list node that can store any type of content
- * through a void pointer.
+ * @brief Forward declarations of internal data structures
+ * Internal implementation details are hidden in private headers
  */
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
-
+typedef struct s_list	t_list;
 typedef struct s_arena	t_arena;
 
 /**

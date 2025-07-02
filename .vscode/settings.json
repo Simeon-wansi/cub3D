@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "mlx.h": "c",
-        "parser_utils.h": "c"
+        "parser_utils.h": "c",
+        "stdio.h": "c"
     }
 }

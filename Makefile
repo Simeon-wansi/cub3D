@@ -1,9 +1,19 @@
 NAME =  cub3d
 
 SRC_DIR = srcs
+PARSER_DIR = srcs/parsing
 
-SRC  = $(addprefix $(SRC_DIR)/, main.c player.c)
+SRC  =	$(SRC_DIR)/main.c $(SRC_DIR)/raycasting.c $(SRC_DIR)/init.c \
+		$(SRC_DIR)/player.c $(SRC_DIR)/parsing.c $(SRC_DIR)/utils.c \
+		$(SRC_DIR)/moves.c $(SRC_DIR)/drawing.c
 
+PARSER_SRC =	$(PARSER_DIR)/map_util.c $(PARSER_DIR)/parser_util.c \
+				$(PARSER_DIR)/parser_util1.c $(PARSER_DIR)/parser_util2.c \
+				$(PARSER_DIR)/parser_util3.c $(PARSER_DIR)/parser.c
+
+ALL_SRCS = $(SRC) $(PARSER_SRC)
+
+OBJ_DIR = obj
 
 LIBFT_DIR = includes/libft
 LIBFT_LIB = $(LIBFT_DIR)/libft.a
@@ -15,10 +25,10 @@ FRAMEWORK = -framework OpenGL -framework AppKit
 
 
 CC = cc 
-CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror #-g
 
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(ALL_SRCS:%.c=$(OBJ_DIR)/%.o)
 
 RM = rm -f
 
@@ -32,6 +42,10 @@ $(NAME): $(OBJ)
 	@echo "Compiling $(NAME)..."
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT_LIB) $(MLX_LIB) $(FRAMEWORK) -o $@
 	@echo "$(NAME) compiled successfully!"
+
+$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
