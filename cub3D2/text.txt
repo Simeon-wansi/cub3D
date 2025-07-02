@@ -1,0 +1,1409 @@
+Debug: Parsed color - R: 80, G: 60, B: 40
+Debug: Parsed color - R: 80, G: 80, B: 120
+Debug: Map loaded with 21 rows and 29 columns
+debug: texture paths:
+NO: textures/blackhexagon.xpm
+SO: textures/hexagonwall.xpm
+WE: textures/matrix.xpm
+Debug: Initializing game...
+Debug: Texture 0 loaded successfully from textures/matrix.xpm
+Debug: Texture 1 loaded successfully from textures/spaceshipdark.xpm
+Debug: Texture 2 loaded successfully from textures/blackhexagon.xpm
+Debug: Texture 3 loaded successfully from textures/hexagonwall.xpm
+Debug : Player initialized at (20.000000, 20.000000) facing angle 1.570796
+Debug: Game initialized successfully
+Debug: Entering mlx loop
+Debug: Ray angle: 1.05
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.05
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.05
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.05
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.05
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.05
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.06
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.06
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.06
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.06
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.06
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.06
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.06
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.07
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.07
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.07
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.07
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.07
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.07
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.07
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.08
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.08
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.08
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.08
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.08
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.08
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.08
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.08
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.09
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.09
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.09
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.09
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.09
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.09
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.09
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.10
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.10
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.10
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.10
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.10
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.10
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.10
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.11
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.11
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.11
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.11
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.11
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.11
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.11
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.12
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.12
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.12
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.12
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.12
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.12
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.12
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.13
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.13
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.13
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.13
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.13
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.13
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.13
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.14
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.14
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.14
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.14
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.14
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.14
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.14
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.14
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.15
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.15
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.15
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.15
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.15
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.15
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.15
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.16
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.16
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.16
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.16
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.16
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.16
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.16
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.17
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.17
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.17
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.17
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.17
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.17
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.17
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.18
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.18
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.18
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.18
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.18
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.18
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.18
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.19
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.19
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.19
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.19
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.19
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.19
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.19
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.20
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.20
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.20
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.20
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.20
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.20
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.20
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.20
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.21
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.21
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.21
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.21
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.21
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.21
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.21
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.22
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.22
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.22
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.22
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.22
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.22
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.22
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.23
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.23
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.23
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.23
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.23
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.23
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.23
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.24
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.24
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.24
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.24
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.24
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.24
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.24
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.25
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.25
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.25
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.25
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.25
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.25
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.25
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.26
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.26
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.26
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.26
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.26
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.26
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.26
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.27
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.27
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.27
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.27
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.27
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.27
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.27
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.27
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.28
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.28
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.28
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.28
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.28
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.28
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.28
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.29
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.29
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.29
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.29
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.29
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.29
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.29
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.30
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.30
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.30
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.30
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.30
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.30
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.30
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.31
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.31
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.31
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.31
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.31
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.31
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.31
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.32
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.32
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.32
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.32
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.32
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.32
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.32
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.33
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.33
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.33
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.33
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.33
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.33
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.33
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.33
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.34
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.34
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.34
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.34
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.34
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.34
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.34
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.35
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.35
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.35
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.35
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.35
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.35
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.35
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.36
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.36
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.36
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.36
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.36
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.36
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.36
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.37
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.37
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.37
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.37
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.37
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.37
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.37
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.38
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.38
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.38
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.38
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.38
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.38
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.38
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.39
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.39
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.39
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.39
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.39
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.39
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.39
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.39
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.40
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.40
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.40
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.40
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.40
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.40
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.40
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.41
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.41
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.41
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.41
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.41
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.41
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.41
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.42
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.42
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.42
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.42
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.42
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.42
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.42
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.43
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.43
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.43
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.43
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.43
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.43
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.43
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.44
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.44
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.44
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.44
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.44
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.44
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.44
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.45
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.45
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.45
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.45
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.45
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.45
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.45
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.45
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.46
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.46
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.46
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.46
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.46
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.46
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.46
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.47
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.47
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.47
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.47
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.47
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.47
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.47
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.48
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.48
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.48
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.48
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.48
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.48
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.48
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.49
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.49
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.49
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.49
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.49
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.49
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.49
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.50
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.50
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.50
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.50
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.50
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.50
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.50
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.51
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.51
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.51
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.51
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.51
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.51
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.51
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.51
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.52
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.52
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.52
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.52
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.52
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.52
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.52
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.53
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.53
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.53
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.53
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.53
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.53
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.53
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.54
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.54
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.54
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.54
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.54
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.54
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.54
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.55
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.55
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.55
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.55
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.55
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.55
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.55
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.56
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.56
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.56
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.56
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.56
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.56
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.56
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.57
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.57
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.57
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.57
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.57
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.57
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.57
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.57
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.58
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.58
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.58
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.58
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.58
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.58
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.58
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.59
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.59
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.59
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.59
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.59
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.59
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.59
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.60
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.60
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.60
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.60
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.60
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.60
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.60
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.61
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.61
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.61
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.61
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.61
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.61
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.61
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.62
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.62
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.62
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.62
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.62
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.62
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.62
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.63
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.63
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.63
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.63
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.63
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.63
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.63
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.64
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.64
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.64
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.64
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.64
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.64
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.64
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.64
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.65
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.65
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.65
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.65
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.65
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.65
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.65
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.66
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.66
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.66
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.66
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.66
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.66
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.66
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.67
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.67
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.67
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.67
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.67
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.67
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.67
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.68
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.68
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.68
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.68
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.68
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.68
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.68
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.69
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.69
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.69
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.69
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.69
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.69
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.69
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.70
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.70
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.70
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.70
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.70
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.70
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.70
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.70
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.71
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.71
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.71
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.71
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.71
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.71
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.71
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.72
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.72
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.72
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.72
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.72
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.72
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.72
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.73
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.73
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.73
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.73
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.73
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.73
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.73
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.74
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.74
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.74
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.74
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.74
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.74
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.74
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.75
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.75
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.75
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.75
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.75
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.75
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.75
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.76
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.76
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.76
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.76
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.76
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.76
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.76
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.76
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.77
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.77
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.77
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.77
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.77
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.77
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.77
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.78
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.78
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.78
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.78
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.78
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.78
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.78
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.79
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.79
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.79
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.79
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.79
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.79
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.79
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.80
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.80
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.80
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.80
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.80
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.80
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.80
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.81
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.81
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.81
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.81
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.81
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.81
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.81
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.82
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.82
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.82
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.82
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.82
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.82
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.82
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.82
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.83
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.83
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.83
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.83
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.83
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.83
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.83
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.84
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.84
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.84
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.84
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.84
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.84
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.84
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.85
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.85
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.85
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.85
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.85
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.85
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.85
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.86
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.86
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.86
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.86
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.86
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.86
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.86
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.87
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.87
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.87
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.87
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.87
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.87
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.87
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.88
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.88
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.88
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.88
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.88
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.88
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.88
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.88
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.89
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.89
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.89
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.89
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.89
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.89
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.89
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.90
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.90
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.90
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.90
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.90
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.90
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.90
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.91
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.91
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.91
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.91
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.91
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.91
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.91
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.92
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.92
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.92
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.92
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.92
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.92
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.92
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.93
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.93
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.93
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.93
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.93
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.93
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.93
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.94
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.94
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.94
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.94
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.94
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.94
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.94
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.94
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.95
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.95
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.95
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.95
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.95
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.95
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.95
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.96
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.96
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.96
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.96
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.96
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.96
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.96
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.97
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.97
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.97
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.97
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.97
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.97
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.97
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.98
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.98
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.98
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.98
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.98
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.98
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.98
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.99
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.99
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.99
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.99
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.99
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.99
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 1.99
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 2.00
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 2.00
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 2.00
+Debug: Ray position: (20.00, 20.00)
+Debug: Ray angle: 2.00
+Debug: Ray position: (20.00, 20.
+
+
+void draw_lines(t_player *player, t_game *game, float start_x, int column) 
+{ 
+    t_ray ray;
+
+    init_ray(&ray, player, start_x); 
+    // Cast ray until it hits a wall 
+    while(!colision_check(ray.ray_x, ray.ray_y, game)) 
+    { 
+        ray.prev_x = ray.ray_x; ray.prev_y = ray.ray_y; 
+        ray.ray_x += ray.cos_angle; 
+        ray.ray_y += ray.sin_angle; 
+        // Safety check to prevent infinite loops 
+        if (ray.ray_x < -BLOCK_SIZE || ray.ray_x > (game->map.width + 1) * BLOCK_SIZE 
+            || ray.ray_y < -BLOCK_SIZE || ray.ray_y > (game->map.height + 1) * BLOCK_SIZE) 
+        { 
+            break; 
+        } 
+    } 
+    ray.dist = distance(player->x, player->y, ray.ray_x, ray.ray_y, game); 
+    if (ray.dist <= 0 || isnan(ray.dist) || isinf(ray.dist)) 
+    { 
+        ray.dist = 1.0; 
+    } 
+    get_wall_texture(&ray); 
+    render_3d(game, &ray, column); 
+}

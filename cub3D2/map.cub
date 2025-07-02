@@ -1,7 +1,7 @@
 NO textures/wolfenstein/blue_stone.xpm
-SO textures/wolfenstein/mossy.xpm
-WE textures/wolfenstein/grey_stone.xpm
-EA textures/wolfenstein/purple_stone.xpm
+SO textures/wolfenstein/grey_stone.xpm
+WE textures/wolfenstein/purple_stone.xpm
+EA textures/wolfenstein/mossy.xpm
 
 F 80,60,40 
 C 80,80,120 
