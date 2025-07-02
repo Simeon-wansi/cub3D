@@ -2,7 +2,8 @@ NAME =  cub3d
 
 SRC_DIR = srcs
 
-SRC  = $(addprefix $(SRC_DIR)/, main.c raycasting.c init_images.c)
+SRC  = $(addprefix $(SRC_DIR)/, main.c raycasting.c init.c player.c parsing.c \
+		utils.c moves.c drawing.c )
 
 
 LIBFT_DIR = includes/libft
