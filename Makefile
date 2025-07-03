@@ -7,9 +7,14 @@ SRC  =	$(SRC_DIR)/main.c $(SRC_DIR)/raycasting.c $(SRC_DIR)/init.c \
 		$(SRC_DIR)/player.c $(SRC_DIR)/parsing.c $(SRC_DIR)/utils.c \
 		$(SRC_DIR)/moves.c $(SRC_DIR)/drawing.c
 
-PARSER_SRC =	$(PARSER_DIR)/map_util.c $(PARSER_DIR)/parser_util.c \
-				$(PARSER_DIR)/parser_util1.c $(PARSER_DIR)/parser_util2.c \
-				$(PARSER_DIR)/parser_util3.c $(PARSER_DIR)/parser.c
+PARSER_SRC =	$(PARSER_DIR)/parser.c $(PARSER_DIR)/file_handler.c \
+				$(PARSER_DIR)/string_utils.c $(PARSER_DIR)/color_parser.c \
+				$(PARSER_DIR)/texture_parser.c $(PARSER_DIR)/element_parser.c \
+				$(PARSER_DIR)/map_validator.c $(PARSER_DIR)/map_validator2.c \
+				$(PARSER_DIR)/position_validator.c $(PARSER_DIR)/player_parser.c \
+				$(PARSER_DIR)/map_parser.c $(PARSER_DIR)/map_parser2.c \
+				$(PARSER_DIR)/config_parser.c $(PARSER_DIR)/config_adapter.c \
+				$(PARSER_DIR)/map_init.c
 
 ALL_SRCS = $(SRC) $(PARSER_SRC)
 

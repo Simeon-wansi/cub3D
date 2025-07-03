@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser_util.c                                      :+:      :+:    :+:   */
+/*   string_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmensah- <hmensah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 19:07:27 by hmensah-          #+#    #+#             */
-/*   Updated: 2025/07/02 19:20:11 by hmensah-         ###   ########.fr       */
+/*   Created: 2025/07/03 19:00:00 by hmensah-          #+#    #+#             */
+/*   Updated: 2025/07/03 19:00:00 by hmensah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,37 +38,21 @@ char	*trim_newline(char *str)
 	return (str);
 }
 
-bool	is_valid_map_char(char c)
+char	*prepare_content(char *line, int offset)
 {
-	return (c == '0' || c == '1' || c == 'N' || c == 'S' || c == 'E'
-		|| c == 'W' || c == ' ');
+	char	*content;
+
+	content = skip_whitespace(line + offset);
+	trim_newline(content);
+	return (content);
 }
 
-bool	parse_color_p(char *line, int *r, int *g, int *b)
+bool	is_empty_line(char *line)
 {
-	char	**rgb_parts;
-	int		i;
+	char	*trimmed;
 
-	rgb_parts = ft_split(line, ',');
-	if (!rgb_parts)
-		return (false);
-	i = 0;
-	while (rgb_parts[i])
-		i++;
-	if (i != 3)
-	{
-		i = 0;
-		while (rgb_parts[i])
-			free(rgb_parts[i++]);
-		free(rgb_parts);
-		return (false);
-	}
-	*r = ft_atoi(rgb_parts[0]);
-	*g = ft_atoi(rgb_parts[1]);
-	*b = ft_atoi(rgb_parts[2]);
-	i = 0;
-	while (rgb_parts[i])
-		free(rgb_parts[i++]);
-	return (free(rgb_parts), *r >= 0 && *r <= 255 && *g >= 0 && *g <= 255
-		&& *b >= 0 && *b <= 255);
+	trimmed = skip_whitespace(line);
+	if (!*trimmed || *trimmed == '\n')
+		return (true);
+	return (false);
 }
