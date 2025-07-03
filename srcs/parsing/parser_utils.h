@@ -6,7 +6,7 @@
 /*   By: hmensah- <hmensah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 19:00:00 by hmensah-          #+#    #+#             */
-/*   Updated: 2025/07/03 19:00:00 by hmensah-         ###   ########.fr       */
+/*   Updated: 2025/07/03 15:36:40 by hmensah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ bool	count_rgb_parts(char **rgb_parts);
 void	free_rgb_parts(char **rgb_parts);
 bool	validate_rgb_values(int r, int g, int b);
 bool	parse_color_values(char **rgb_parts, int *r, int *g, int *b);
-bool	parse_color(char *line, int *r, int *g, int *b);
+bool	parse_color_p(char *line, int *r, int *g, int *b);
 
 /* texture_parser.c */
 bool	allocate_texture_path(char *path, char **texture_path, t_arena *arena);
@@ -123,11 +123,11 @@ bool	are_internal_positions_valid(t_config *config);
 bool	is_player_char(char c);
 void	record_player_position(t_config *config, int i, int j);
 bool	find_player_position_row(t_config *config, int i, int *count);
-bool	find_player_position(t_config *config);
+bool	find_player_position_p(t_config *config);
 void	print_config(t_config *config);
 
 /* map_parser.c */
-int		count_map_rows(t_list *map_start);
+int		count_map_rows_p(t_list *map_start);
 bool	allocate_map_board(t_config *config, int row_count, t_arena *arena);
 bool	copy_map_line(t_config *config, char *line, int index, t_arena *arena);
 bool	populate_map_board(t_list *map_start, t_config *config, t_arena *arena);

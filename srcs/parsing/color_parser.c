@@ -6,7 +6,7 @@
 /*   By: hmensah- <hmensah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 19:00:00 by hmensah-          #+#    #+#             */
-/*   Updated: 2025/07/03 19:00:00 by hmensah-         ###   ########.fr       */
+/*   Updated: 2025/07/03 15:24:51 by hmensah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ bool	parse_color_values(char **rgb_parts, int *r, int *g, int *b)
 	return (validate_rgb_values(*r, *g, *b));
 }
 
-bool	parse_color(char *line, int *r, int *g, int *b)
+bool	parse_color_p(char *line, int *r, int *g, int *b)
 {
 	char	**rgb_parts;
 	bool	result;

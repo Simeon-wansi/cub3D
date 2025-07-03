@@ -6,7 +6,7 @@
 /*   By: hmensah- <hmensah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 19:00:00 by hmensah-          #+#    #+#             */
-/*   Updated: 2025/07/03 19:00:00 by hmensah-         ###   ########.fr       */
+/*   Updated: 2025/07/03 15:36:54 by hmensah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ bool	find_player_position_row(t_config *config, int i, int *count)
 	return (true);
 }
 
-bool	find_player_position(t_config *config)
+bool	find_player_position_p(t_config *config)
 {
 	int	i;
 	int	player_count;
@@ -58,8 +58,6 @@ bool	find_player_position(t_config *config)
 
 void	print_config(t_config *config)
 {
-	int	i;
-
 	if (!config)
 		return ;
 	printf("=== Configuration ===\n");

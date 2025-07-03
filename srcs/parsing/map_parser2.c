@@ -6,7 +6,7 @@
 /*   By: hmensah- <hmensah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 19:00:00 by hmensah-          #+#    #+#             */
-/*   Updated: 2025/07/03 19:00:00 by hmensah-         ###   ########.fr       */
+/*   Updated: 2025/07/03 15:37:48 by hmensah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 bool	validate_map_structure(t_config *config)
 {
-	if (!find_player_position(config))
+	if (!find_player_position_p(config))
 	{
 		print_error("Map must contain exactly one player (N, S, E, or W)");
 		return (false);
@@ -32,7 +32,7 @@ bool	parse_map(t_list *map_start, t_config *config, t_arena *arena)
 {
 	int	row_count;
 
-	row_count = count_map_rows(map_start);
+	row_count = count_map_rows_p(map_start);
 	if (row_count == 0)
 	{
 		print_error("Empty map");
