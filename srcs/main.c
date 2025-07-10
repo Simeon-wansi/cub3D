@@ -47,6 +47,15 @@ void init_game(t_game *game)
    
 }
 
+
+
+void init_game(t_game *game)
+{
+	int_timing(game);
+}
+
+
+
 // void free_map(t_map *map)
 // {
 //     int i;

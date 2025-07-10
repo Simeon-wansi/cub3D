@@ -72,6 +72,60 @@
 # define DEBUG 0
 # define ERROR_MSG "Error\n"
 
+/* ========== OPTIMISATION STRUCTURE ========== */
+
+typedef struct s_dda
+{
+	double delta_x;
+	double delta_y;
+	int step_x;
+	int step_y;
+	double side_dist_x;
+	double side_dist_y;
+	int map_x;
+	int map_y;
+	int side;
+} t_dda;
+
+
+typedef struct s_timing
+{
+	double last_frame_time;
+	double delta_time;
+	double fps;
+	double frame_start;
+} t_timing;
+
+
+typedef struct s_performance
+{
+	double frame_time;
+	double render_time;
+	double logic_time;
+	int ray_cast;
+	int pixels_drawn;
+	double avg_fps;
+	double fps_samples[60];
+	int sample_index;
+	double frame_start;
+} t_performance;
+
+typedef struct s_smooth_movement
+{
+	double velocity_x;
+	double velocity_y;
+	double acceleration;
+	double max_speed;
+} t_smooth_movement;
+
+typedef struct s_loading
+{
+	int textture_loaded;
+	int total_textures;
+	bool loading_complete;
+} t_loading;
+
+
 /* ========== STRUCTURES ========== */
 
 typedef struct s_game t_game; // Forward declaration
@@ -129,6 +183,8 @@ typedef struct s_player
 	bool	rotate_left;
 	bool	rotate_right;
 	t_game	*game;	/* Pointer to the game structure for access to game state */
+
+	t_smooth_movement smooth;
 }	t_player;
 
 typedef struct s_ray
@@ -180,6 +236,9 @@ typedef struct s_game
 	bool		game_running;
 
 	t_wall		wall;
+	t_timing timing;
+	t_performance perf;
+	t_loading loading;
 }	t_game;
 
 
