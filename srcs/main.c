@@ -23,35 +23,65 @@ void clear_image(t_game *game)
 }
 
 
+// void init_game(t_game *game)
+// {
+// 	printf("Debug: Initializing game...\n");
+	
+// 	init_colors(game);
+// 	game->mlx_ptr = mlx_init();
+// 	game->win_ptr = mlx_new_window(game->mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT, "Cub3D");
+// 	game->win_img.img_ptr = mlx_new_image(game->mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT);
+// 	game->win_img.addr = mlx_get_data_addr(game->win_img.img_ptr, &game->win_img.bpp,
+// 										   &game->win_img.line_length, &game->win_img.endian);
+// 	game->win_img.width = WINDOW_WIDTH;
+// 	game->win_img.height = WINDOW_HEIGHT;
+// 	printf("Debug: Image created successfully - addr: %p, bpp: %d, line_length: %d\n", 
+// 		game->win_img.addr, game->win_img.bpp, game->win_img.line_length);
+	
+// 	clear_image(game);
+// 	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->win_img.img_ptr, 0, 0);
+// 	load_texture(game);
+// 	init_player_from_map(game, &game->player);
+// 	game->player.game = game;
+// 	printf("Debug: Game initialized successfully\n");
+   
+// }
+
+void exit_error(char *message)
+{
+	ft_printf("Error : %s\n", message);
+	exit(EXIT_FAILURE);
+}
+
+
 void init_game(t_game *game)
 {
-	printf("Debug: Initializing game...\n");
-	
+	init_timing(game);
+	init_performance(game);
 	init_colors(game);
 	game->mlx_ptr = mlx_init();
+	if (!game->mlx_ptr)
+		exit_error("Error initializing mlx");
 	game->win_ptr = mlx_new_window(game->mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT, "Cub3D");
+	if (!game->win_ptr)
+		exit_error("Error creating window");
 	game->win_img.img_ptr = mlx_new_image(game->mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT);
+	if (!game->win_img.img_ptr)
+		exit_error("Error creating image");
 	game->win_img.addr = mlx_get_data_addr(game->win_img.img_ptr, &game->win_img.bpp,
 										   &game->win_img.line_length, &game->win_img.endian);
 	game->win_img.width = WINDOW_WIDTH;
 	game->win_img.height = WINDOW_HEIGHT;
-	printf("Debug: Image created successfully - addr: %p, bpp: %d, line_length: %d\n", 
-		game->win_img.addr, game->win_img.bpp, game->win_img.line_length);
-	
-	clear_image(game);
+	// we clear the image to black
+	fast_clear_image(game);
 	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->win_img.img_ptr, 0, 0);
 	load_texture(game);
+	if (DEBUG)
+		debug_texture_info(game);
 	init_player_from_map(game, &game->player);
 	game->player.game = game;
+	init_smooth_movement(&game->player);
 	printf("Debug: Game initialized successfully\n");
-   
-}
-
-
-
-void init_game(t_game *game)
-{
-	int_timing(game);
 }
 
 

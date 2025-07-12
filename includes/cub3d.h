@@ -115,6 +115,7 @@ typedef struct s_smooth_movement
 	double velocity_x;
 	double velocity_y;
 	double acceleration;
+	double deceleration;
 	double max_speed;
 } t_smooth_movement;
 
@@ -129,6 +130,12 @@ typedef struct s_loading
 /* ========== STRUCTURES ========== */
 
 typedef struct s_game t_game; // Forward declaration
+
+typedef struct s_point
+{
+	int x;
+	int y;
+} t_point;
 
 typedef struct s_color
 {
@@ -254,18 +261,46 @@ typedef struct s_render
 }   t_render;
 /* ========== FUNCTION PROTOTYPES ========== */
 
+//Performance functions
+double get_time(void);
+void init_timing(t_game *game);
+void init_performance(t_game *game);
+void update_timing(t_game *game);
+void track_performance(t_game *game);
+void draw_debug_overlay(t_game *game);
+void fast_clear_image(t_game *game);
+void draw_vertical_line(t_game *game, int x, int start_y, int end_y, int color);
+double lerp (double a, double b, double t);
+void init_smooth_movement(t_player *player);
+bool swept_collision_check(t_player *player, double new_x, double new_y, t_game *game);
+void smooth_player_movement(t_player *player, double delta_time);
+
+// TExttures
+void load_texture(t_game *game);
+void create_fallback_texture(t_game *game, int tex_index);
+int validate_texture_file(char *texture_path);
+void show_loading_progress( t_game *game , int progress);
+
+//ray
+void get_wall_texture(t_ray *ray);
+int perform_dda(t_dda *dda, t_game *game);
 
 
+//Debug 
+void debug_texture_info(t_game *game);
+
+
+void exit_error(char *message);
 // int mlx_pixel_put_img(t_game *game, int x, int y, int color);
 void init_colors(t_game *game);
-int find_max_width(char *map_str);
-char *trim_whitespace(char *str);
-int count_map_rows(char *map_str);
+// int find_max_width(char *map_str);
+// char *trim_whitespace(char *str);
+// int count_map_rows(char *map_str);
 void clear_image(t_game *game);
-void init_map(t_map *map, char *map_path);
+// void init_map(t_map *map, char *map_path);
 void init_player_from_map(t_game *game, t_player *player);
 int close_game(t_game *game);
-t_color parse_color(char *color_str);
+// t_color parse_color(char *color_str);
 int key_press(int key_code, t_game *game);
 int key_release(int key_code, t_game *game);
 void put_pixel(int x, int y, int color, t_game *game);

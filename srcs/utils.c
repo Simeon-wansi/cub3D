@@ -43,3 +43,20 @@ int close_game(t_game *game)
     printf("Debug: Game closed successfully\n");
     exit(EXIT_SUCCESS);
 }
+
+// Performance monitoring functions
+
+void update_timing(t_game *game)
+{
+    double current_time;
+
+    current_time = get_time();
+    game->timing.delta_time = current_time - game->timing.last_frame_time;
+    game->timing.last_frame_time = current_time;
+
+    // limit delta time to prevent larg jumps
+    if (game->timing.delta_time > 0.1)
+        game->timing.delta_time = 0.1;
+    
+    game->timing.fps = 1.0 / game->timing.delta_time;
+}
