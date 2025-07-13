@@ -13,15 +13,11 @@ void init_timing(t_game *game)
     double current_time;
 
     current_time = get_time();
-    game->timing.delta_time = current_time - game->timing.last_frame_time;
     game->timing.last_frame_time = current_time;
-
-    if (game->timing.delta_time < 0.01)
-        game->timing.delta_time = 0.01; // Prevent too small delta time
-    else if (game->timing.delta_time > 0.1)
-        game->timing.delta_time = 0.1; // Prevent too large delta time
-
-    game->timing.fps = 1.0 / game->timing.delta_time;
+    game->timing.frame_start = 0.016;
+    game->timing.fps = 60.0;
+    game->timing.frame_start = current_time;
+    printf("Debug: Timing system initialized\n");
 }
 
 void init_performance(t_game *game)
@@ -54,6 +50,14 @@ void track_performance(t_game *game)
 
     end_time = get_time();
     game->perf.frame_time =  end_time -  game->perf.frame_start;
+
+    // Strore current FPS in the sample array
+
+    if (game->perf.frame_time > 0)
+    {
+        game->perf.fps_samples[game->perf.sample_index] = 1.0 / game->perf.frame_time;
+        game->perf.sample_index = (game->perf.sample_index + 1) % 60; // Wrap around after 60 samples
+    }
     
     // calculate average FPS
     total = 0.0;
@@ -89,7 +93,7 @@ void draw_debug_overlay(t_game *game)
 
 void fast_clear_image(t_game *game)
 {
-    // Use memset to quickly clear the image buffer
+    // memset to quickly clear the image buffer
     memset(game->win_img.addr, 0, WINDOW_HEIGHT * game->win_img.line_length);
 }
 
@@ -137,6 +141,7 @@ void init_smooth_movement(t_player *player)
     player->smooth.velocity_y = 0.0;
     player->smooth.acceleration = 0.8;//  units per second squared
     player->smooth.deceleration = 12.0; // units per second squared
+    player->smooth.max_speed = MOVE_SPEED * 20.0; // Maximum speed in units per second
 }
 
 
@@ -148,8 +153,26 @@ void smooth_player_movement(t_player *player, double delta_time)
     double new_x;
     double new_y;
 
+    
+    // Handle rotation
+    if (player->rotate_left)
+        player->angle -= ROTATE_SPEED;
+    if (player->rotate_right)
+        player->angle += ROTATE_SPEED;
+
+    // Normalize angle to [0, 2*PI]
+    if (player->angle < 0)
+        player->angle += 2 * M_PI;
+    else if (player->angle >= 2 * M_PI)
+        player->angle -= 2 * M_PI;
+
+    //Update direction vctors based on new angle
+    player->dx = cos(player->angle);
+    player->dy = sin(player->angle);
+
     target_velocity_x = 0.0;
     target_velocity_y = 0.0;
+
 
     // We calculate the target velocity base on player input
     if (player->move_up)
@@ -197,9 +220,29 @@ void smooth_player_movement(t_player *player, double delta_time)
         }
         else
         {
-            // If collision detected, reset velocity to zero , we stop the smooth movement
-            player->smooth.velocity_x = 0.0;
-            player->smooth.velocity_y = 0.0;
+            // // If collision detected, reset velocity to zero , we stop the smooth movement
+            // player->smooth.velocity_x = 0.0;
+            // player->smooth.velocity_y = 0.0;
+
+            // if full movement block we try sliding along the walls
+            //try x movement
+            if (!swept_collision_check(player, new_x, player->y, player->game))
+            {
+                player->x = new_x;
+                player->smooth.velocity_y = 0.0; // Stop vertical movement
+            }
+            //try y movement
+            else if (!swept_collision_check(player, player->x, new_y, player->game))
+            {
+                player->y = new_y;
+                player->smooth.velocity_x = 0.0; // Stop horizontal movement
+            }
+            else
+            {
+                // If both movements are blocked, we stop the player
+                player->smooth.velocity_x = 0.0;
+                player->smooth.velocity_y = 0.0;
+            }
         }
     }
 }
@@ -213,7 +256,7 @@ bool swept_collision_check(t_player *player, double new_x, double new_y, t_game 
     double check_x;
     double check_y;
 
-    steps = 5.0; // Number of steps for swept collision check
+    steps = 10.0; // Number of steps for swept collision check
     step_x = (new_x - player->x) / steps;
     step_y = (new_y - player->y) / steps;
 
@@ -223,10 +266,12 @@ bool swept_collision_check(t_player *player, double new_x, double new_y, t_game 
         check_x = player->x + step_x * i;
         check_y = player->y + step_y * i;
 
-        if (colision_check(check_x, check_y, game))
+        if (is_collision(check_x, check_y, game))
             return true; // Collision detected
 
         i++;
     }
+    if (is_collision(new_x, new_y, game))
+        return true; 
     return false; // No collision detected
 }

@@ -21,6 +21,9 @@ void init_player_from_map(t_game *game, t_player *player)
     player->move_right = false;
     player->rotate_left = false;
     player->rotate_right = false;
+
+    printf("Debug : player initialized at grid (%d, %d) dir '%c', worl pos(%.2f, %.2f), angle %.2f\n", 
+        game->map.player_x, game->map.player_y, game->map.player_dir, player->x, player->y, player->angle);
 }
 
 int key_press(int key_code, t_game *game)
@@ -109,10 +112,7 @@ bool is_collision(double x, double y, t_game *game)
     return false; // No collision
 }
 
-
-
-
-
+ 
 
 void move_player(t_player *player)
 {

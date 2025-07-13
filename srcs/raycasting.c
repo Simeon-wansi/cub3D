@@ -103,10 +103,13 @@ void render_3d(t_game *game, t_ray *ray, int column)
         if (ty >= texture->height)
             ty = texture->height - 1;
         
+        
         index = ty * texture->line_length + render.texture_x * (texture->bpp / 8);
 
         // Safe color extraction with bounds checking
-        if (index >= 0 && index + 2 < texture->height * texture->line_length)
+
+        // if (index >= 0 && index + 2 < texture->height * texture->line_length)
+        if (index >= 0 && index + (texture->bpp / 8) <= texture->height * texture->line_length)
         {
              // Extract color based on bits per pixel
             if (texture->bpp == 32)
@@ -140,38 +143,6 @@ void render_3d(t_game *game, t_ray *ray, int column)
 }
 
 
-// void draw_lines(t_player *player, t_game *game, float start_x, int column)
-// {
-//     t_ray ray;
-//     // double ray_angle;
-
-//     init_ray(&ray, player, start_x);
-//     while(!colision_check(ray.ray_x, ray.ray_y, game) )
-//     {
-//         put_pixel(ray.ray_x * MINIMAP_SCALE, ray.ray_y * MINIMAP_SCALE, COLOR_CYAN, game);
-//         ray.prev_x = ray.ray_x;
-//         ray.prev_y = ray.ray_y;
-
-//         ray.ray_x += ray.cos_angle;
-//         ray.ray_y += ray.sin_angle;
-//         // if (ray.ray_x < -BLOCK_SIZE || ray.ray_x > (game->map.width + 1) * BLOCK_SIZE ||
-//         // ray.ray_y < -BLOCK_SIZE || ray.ray_y > (game->map.height + 1) * BLOCK_SIZE)
-//         // {
-//         //     printf("Warning: Ray went outside map bounds\n");
-//         //     break;
-//         // }
-//     }
-
-//     ray.dist = distance(player->x, player->y, ray.ray_x, ray.ray_y, game);
-//     if (ray.dist <= 0 || isnan(ray.dist) || isinf(ray.dist)) {
-//         printf("Warning: Invalid ray distance: %f\n", ray.dist);
-//         ray.dist = 1.0; // Set minimum distance to avoid division by zero
-//     }
-//     get_wall_texture(&ray);
-//     render_3d(game, &ray, column);
-// }
-
-
 void init_dda(t_dda *dda, t_player *player, double ray_dir_x, double ray_dir_y)
 {
     //  calculate which grid celle we're in
@@ -182,12 +153,12 @@ void init_dda(t_dda *dda, t_player *player, double ray_dir_x, double ray_dir_y)
     if (ray_dir_x == 0)
         dda->delta_x = 1e30; // Avoid division by zero
     else
-        dda->delta_y = fabs(1.0 / ray_dir_x);
+        dda->delta_x = fabs(1.0 / ray_dir_x);
  
     if (ray_dir_y == 0)
         dda->delta_y = 1e30; // Avoid division by zero
     else
-        dda->delta_x = fabs(1.0 / ray_dir_y);
+        dda->delta_y = fabs(1.0 / ray_dir_y);
 
     // calculate step direction and inital side_dist
     if (ray_dir_x < 0)
@@ -198,7 +169,7 @@ void init_dda(t_dda *dda, t_player *player, double ray_dir_x, double ray_dir_y)
     else
     {
         dda->step_x = 1;
-        dda->side_dist_x = (dda->map_x + 1.0 * BLOCK_SIZE - player->x) * dda->delta_x;
+        dda->side_dist_x = (dda->map_x + 1.0 - player->x / BLOCK_SIZE) * dda->delta_x;
     }
     if (ray_dir_y < 0)
     {
@@ -208,7 +179,7 @@ void init_dda(t_dda *dda, t_player *player, double ray_dir_x, double ray_dir_y)
     else
     {
         dda->step_y = 1;
-        dda->side_dist_y = (dda->map_y + 1.0 * BLOCK_SIZE - player->y) * dda->delta_y;
+        dda->side_dist_y = (dda->map_y + 1.0 - player->y / BLOCK_SIZE) * dda->delta_y;
     }
 }
 
@@ -288,6 +259,18 @@ void get_wall_texture_dda(t_ray *ray, t_dda *dda, t_player *player, double ray_d
         wall_x = wall_x / BLOCK_SIZE; // Normalize to grid size
         ray->tex_pos = wall_x - floor(wall_x); // Fractional part for texture mapping
     }
+    else // Hit y-side (horizontal wall)
+    {
+        if (dda->step_y < 0)
+            ray->tex = TEX_NORTH; // North wall
+        else
+            ray->tex = TEX_SOUTH; // South wall
+
+        // Calculate where exactly the wall was hit (X cordinates)
+        wall_x = player->x + ((dda->map_y - player->y / BLOCK_SIZE + (1 - dda->step_y) / 2) / ray_dir_y) * ray_dir_x * BLOCK_SIZE;
+        wall_x = wall_x / BLOCK_SIZE; // Normalize to grid size
+        ray->tex_pos = wall_x - floor(wall_x); // Fractional part for texture mapping
+    }
 
     // Ensure texture position is in valdie range (0 to 1)
 
@@ -315,10 +298,6 @@ void draw_lines_dda(t_player *player, t_game *game, float start_x, int column)
     {
         // calculate distance 
         ray.dist = calculate_dda_distance(&dda, player, ray_dir_x, ray_dir_y);
-
-        // Apply fisheete correction
-        ray.dist =  calculate_dda_distance(&dda, player, ray_dir_x, ray_dir_y);
-
         // Validate distance 
         if (ray.dist <= 0 || isnan(ray.dist) || isinf(ray.dist))
              ray.dist = 1.0;
@@ -336,30 +315,37 @@ void draw_lines_dda(t_player *player, t_game *game, float start_x, int column)
 
 void draw_minimap(t_game *game)
 {
-    int title_size;
-    int x;
-    int y;
+    int tile_size;
+    t_point p;
+    t_point player;
+    t_point dir;
+    
 
-    title_size = 8; // Size of each tile in the minimap
-    y = 0;
-    while(game->map.grid[y])
+    tile_size = 8;
+    p.y = 0;
+    while(game->map.grid[p.y])
     {
-        x = 0;
-        while(game->map.grid[y][x])
+        p.x = 0;
+        while( game->map.grid[p.y][p.x])
         {
-            if (game->map.grid[y][x] == '1') // Wall
-                // draw_square(x * title_size, y * title_size, title_size, COLOR_RED, game);
-                put_pixel(x * title_size, y * title_size, COLOR_RED, game);
-            else if (game->map.grid[y][x] == '0') // Empty space
-                draw_square(x * title_size, y * title_size, title_size, COLOR_GREEN, game);
-
-            x++;
+            if (game->map.grid[p.y][p.x] == '1')
+                draw_filled_square((t_point){p.x * tile_size, p.y * tile_size }, tile_size, COLOR_RED, game);
+            // else if (game->map.grid[p.y][p.x] == '0')
+            //     draw_filled_square((t_point){p.x * tile_size, p.y * tile_size }, tile_size, COLOR_WHITE, game);
+            p.x++;
         }
-        y++;
+        p.y++;
     }
-    draw_square(game->player.x / BLOCK_SIZE * title_size, 
-                game->player.y / BLOCK_SIZE * title_size, 
-                title_size, COLOR_YELLOW, game);
+
+    //  draw player position
+    player.x = (int)((float)game->player.x / BLOCK_SIZE * tile_size);
+    player.y = (int)((float)game->player.y / BLOCK_SIZE * tile_size);
+    draw_filled_square( (t_point){player.x - tile_size/4, player.y - tile_size/4}, tile_size / 2, COLOR_BLUE, game);
+
+    // Draw player direction indicator
+    dir.x = player.x + (int)(game->player.dx * tile_size);
+    dir.y = player.y + (int)(game->player.dy * tile_size);
+    draw_line(player, dir, COLOR_GREEN, game);
 }
 
 int game_loop(t_game *game)
@@ -370,11 +356,13 @@ int game_loop(t_game *game)
     double fraction;
     
 
-
+    if (!game->game_running)
+        return (0); // Exit if game is not running
     player = &game->player;
 
     //update timing 
     update_timing(game);
+    smooth_player_movement(player, game->timing.delta_time);
     game->perf.frame_start = get_time();
     game->perf.ray_cast = 0; // Reset ray cast count for this frame
 
@@ -402,7 +390,7 @@ int game_loop(t_game *game)
     track_performance(game);
 
     printf(" Debug  : game loop executed, player position (%.2f, %.2f), angle %.1f\n",
-           player->x, player->y, game->perf.avg_fps);
+           player->x, player->y, player->angle);
     return (0);
 }
 

@@ -10,10 +10,18 @@ void move_up(t_player *player)
 
     if (player->move_up)
     {
-        if (!is_collision(new_x, player->y, player->game))
+        if (!is_collision(new_x, new_y, player->game))
+        {
             player->x = new_x;
-        if (!is_collision(player->x, new_y, player->game))
             player->y = new_y;
+        }
+        else
+        {
+            if (!is_collision(new_x, player->y, player->game))
+                player->x = new_x;
+            if (!is_collision(player->x, new_y, player->game))
+                player->y = new_y;
+        }
     }
 }
 
@@ -27,10 +35,19 @@ void move_down(t_player *player)
 
     if (player->move_down)
     {
-        if (!is_collision(new_x, player->y, player->game))
+        if (!is_collision(new_x, new_y, player->game))
+        {
             player->x = new_x;
-        if (!is_collision(player->x, new_y, player->game))
             player->y = new_y;
+        }
+        else
+        {
+            // Try sliding along the walls
+            if (!is_collision(new_x, player->y, player->game))
+                player->x = new_x;
+            if (!is_collision(player->x, new_y, player->game))
+                player->y = new_y;
+        }
     }
 }
 void move_left(t_player *player)
@@ -43,10 +60,19 @@ void move_left(t_player *player)
 
     if (player->move_left)
     {
-        if (!is_collision(new_x, player->y, player->game))
+        if (!is_collision(new_x, new_y, player->game))
+        {
             player->x = new_x;
-        if (!is_collision(player->x, new_y, player->game))
             player->y = new_y;
+        }
+        else
+        {
+            // Try sliding along the walls
+            if (!is_collision(new_x, player->y, player->game))
+                player->x = new_x;
+            if (!is_collision(player->x, new_y, player->game))
+                player->y = new_y;
+        }
     }
 }
 
@@ -61,9 +87,18 @@ void move_right(t_player *player)
 
     if (player->move_right)
     {
-        if (!is_collision(new_x, player->y, player->game))
+        if (!is_collision(new_x, new_y, player->game))
+        {
             player->x = new_x;
-        if (!is_collision(player->x, new_y, player->game))
             player->y = new_y;
+        }
+        else
+        {
+            // Try sliding along the walls
+            if (!is_collision(new_x, player->y, player->game))
+                player->x = new_x;
+            if (!is_collision(player->x, new_y, player->game))
+                player->y = new_y;
+        }
     }
 }

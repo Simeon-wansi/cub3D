@@ -24,6 +24,7 @@ int validate_texture_file(char *texture_path)
     return (ft_strncmp(header, "/* XPM */", 9) == 0);
 }
 
+
 void create_fallback_texture(t_game *game, int tex_index)
 {
     int colors[4];
@@ -81,7 +82,7 @@ void load_texture(t_game *game)
     };
 
     game->loading.total_textures = 4;
-    game->loading.textture_loaded = 0;
+    game->loading.textures_loaded = 0;
     game->loading.loading_complete = false;
     printf("Debug: Loading textures from paths ...:\n");
     i = 0;
@@ -103,27 +104,27 @@ void load_texture(t_game *game)
                 if (game->textures[i].addr)
                 {   
                     printf("Debug: Texture %d loaded successfully from %s\n", i, texture_paths[i]);
-                    game->loading.textture_loaded++;
+                    game->loading.textures_loaded++;
                 }
                 else 
                 {
                     printf("Warining : Failed to load texture %d from %s, usinf fallbck\n", i, texture_paths[i]);
                     create_fallback_texture(game, i);
-                    game->loading.textture_loaded++;
+                    game->loading.textures_loaded++;
                 }
             }
             else
             {
                 printf("Warning: Failed to het data address fot texture %d , using fallback\n", i);
                 create_fallback_texture(game, i);
-                game->loading.textture_loaded++;
+                game->loading.textures_loaded++;
             }
         }
         else
         {
             printf("Warning: invalid texture file at %s, using fallback\n", texture_paths[i]);
             create_fallback_texture(game, i);
-            game->loading.textture_loaded++;
+            game->loading.textures_loaded++;
         }
         i++;        
     }
@@ -131,7 +132,7 @@ void load_texture(t_game *game)
     // Show completion
     show_loading_progress(game, 100);
     game->loading.loading_complete = true;
-    printf("Debug: All textures loaded successfully, total loaded: %d/%d\n", game->loading.textture_loaded, game->loading.total_textures);
+    printf("Debug: All textures loaded successfully, total loaded: %d/%d\n", game->loading.textures_loaded, game->loading.total_textures);
 
 }
 
@@ -148,7 +149,7 @@ void show_loading_progress( t_game *game , int progress)
 
     bar_width = WINDOW_WIDTH / 2;
     bar_height = 20;
-    bar.x = WINDOW_HEIGHT / 2;
+    bar.x = WINDOW_HEIGHT / 4;
     bar.y  = WINDOW_WIDTH / 2 ;
 
     //draw the loading bar background

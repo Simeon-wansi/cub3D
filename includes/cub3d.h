@@ -11,17 +11,19 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <string.h>
+# include <sys/time.h>
+# include <time.h>
 
 /* ========== WINDOW CONSTANTS ========== */
 # define WINDOW_WIDTH 750
-# define WINDOW_HEIGHT 700
+# define WINDOW_HEIGHT 600
 # define MINIMAP_SCALE 0.2
 
 /* ========== GAME CONSTANTS ========== */
 # define MOVE_SPEED 5.0
 # define ROTATE_SPEED 0.05
 # define BLOCK_SIZE 40
-# define PLAYER_SIZE 0.3
+# define PLAYER_SIZE 12
 
 
 /* ========== KEY CODES (macOS) ========== */
@@ -121,7 +123,7 @@ typedef struct s_smooth_movement
 
 typedef struct s_loading
 {
-	int textture_loaded;
+	int textures_loaded;
 	int total_textures;
 	bool loading_complete;
 } t_loading;
@@ -314,8 +316,11 @@ void move_down(t_player *player);
 void move_up(t_player *player);
 int game_loop(t_game *game);
 void load_texture(t_game *game);
-void draw_square(int x, int y, int size, int color, t_game *game);
+
+// void draw_square(int x, int y, int size, int color, t_game *game);
 void draw_minimap(t_game *game);
+void draw_line(t_point p0, t_point p1, int color, t_game *game);
+void draw_filled_square(t_point point, int size, int color, t_game *game);
 int close_game(t_game *game);
 // void free_map(char **map);
 #endif

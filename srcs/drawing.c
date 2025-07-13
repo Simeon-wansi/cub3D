@@ -13,22 +13,59 @@ void put_pixel(int x, int y, int color, t_game *game)
     game->win_img.addr[pixel_index + 2] = (color >> 16) & 0xFF; // Red
 }
 
-void draw_square(int x, int y, int size, int color, t_game *game)
+void draw_filled_square(t_point point, int size, int color, t_game *game)
 {
     int i;
+    int j;
 
-    i = -1;
-    while(++i < size)
-        put_pixel(x + i, y, color, game); // Top side
-    i = -1;
-    while(++i < size)
-        put_pixel(x + i, y + size - 1, color, game); // Bottom side
-    i = -1;
-    while(++i < size)
-        put_pixel(x, y + i, color, game); // Left side
-    i = -1;
-    while(++i < size)
-        put_pixel(x + size - 1, y + i, color, game); // Right side
-    // Draw the center of the square
-    put_pixel(x + size / 2, y + size / 2, color, game); // Center pixel
+    j = 0;
+    while (j < size)
+    {
+        i = 0;
+        while (i < size)
+        {
+            put_pixel(point.x + i, point.y + j, color, game);
+            i++;
+        }
+        j++;
+    }
+}
+// using bresenham's algorithm
+
+void draw_line(t_point p0, t_point p1, int color, t_game *game)
+{
+    t_point d;
+    t_point s;
+    int err;
+    int e2;
+
+    d.x = abs(p1.x - p0.x);
+    d.y = abs(p1.y - p0.y);
+    if (p0.x < p1.x)
+        s.x = 1;
+    else
+        s.x = -1;
+    if (p0.y < p1.y)
+        s.y = 1;
+    else
+        s.y = -1;
+    err = d.x - d.y;
+
+    while (1)
+    {
+        put_pixel(p0.x, p0.y, color, game);
+        if (p0.x == p1.x && p0.y == p1.y)
+            break;
+        e2 = err * 2;
+        if (e2 > -d.y)
+        {
+            err -= d.y;
+            p0.x += s.x;
+        }
+        if (e2 < d.x)
+        {
+            err += d.x;
+            p0.y += s.y;
+        }
+    }
 }
