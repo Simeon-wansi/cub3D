@@ -1,5 +1,16 @@
-#include "../includes/cub3d.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   drawing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/16 17:52:00 by sngantch          #+#    #+#             */
+/*   Updated: 2025/07/17 20:20:56 by sngantch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "../includes/cub3d.h"
 
 void put_pixel(int x, int y, int color, t_game *game)
 {
@@ -30,6 +41,20 @@ void draw_filled_square(t_point point, int size, int color, t_game *game)
         j++;
     }
 }
+
+static void calculate_line_parameters(t_point p0, t_point p1, t_point *d, t_point *s)
+{
+    d->x = abs(p1.x - p0.x);
+    d->y = abs(p1.y - p0.y);
+    if (p0.x < p1.x)
+        s->x = 1; 
+    else
+        s->x = -1;
+    if (p0.y < p1.y)
+        s->y = 1;
+    else
+        s->y = -1;
+}
 // using bresenham's algorithm
 
 void draw_line(t_point p0, t_point p1, int color, t_game *game)
@@ -39,18 +64,8 @@ void draw_line(t_point p0, t_point p1, int color, t_game *game)
     int err;
     int e2;
 
-    d.x = abs(p1.x - p0.x);
-    d.y = abs(p1.y - p0.y);
-    if (p0.x < p1.x)
-        s.x = 1;
-    else
-        s.x = -1;
-    if (p0.y < p1.y)
-        s.y = 1;
-    else
-        s.y = -1;
+    calculate_line_parameters(p0, p1, &d, &s);
     err = d.x - d.y;
-
     while (1)
     {
         put_pixel(p0.x, p0.y, color, game);

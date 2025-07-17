@@ -14,6 +14,7 @@
 # include <sys/time.h>
 # include <time.h>
 
+
 /* ========== WINDOW CONSTANTS ========== */
 # define WINDOW_WIDTH 750
 # define WINDOW_HEIGHT 600
@@ -38,6 +39,7 @@
 # define X_EVENT_KEY_PRESS 2
 # define X_EVENT_KEY_RELEASE 3
 # define X_EVENT_KEY_EXIT 17
+# define MOUSE_SENSITIVITY 0.001
 
 /* ========== COLORS ========== */
 # define COLOR_RED 0xFF0000
@@ -138,6 +140,12 @@ typedef struct s_point
 	int x;
 	int y;
 } t_point;
+
+typedef struct s_dpoint
+{
+    double x;
+    double y;
+} t_dpoint;
 
 typedef struct s_color
 {
@@ -243,6 +251,7 @@ typedef struct s_game
 	int         floor_color;
 	int         ceiling_color;
 	bool		game_running;
+	char		**tex_paths;
 
 	t_wall		wall;
 	t_timing timing;
@@ -269,7 +278,7 @@ void init_timing(t_game *game);
 void init_performance(t_game *game);
 void update_timing(t_game *game);
 void track_performance(t_game *game);
-void draw_debug_overlay(t_game *game);
+// void draw_debug_overlay(t_game *game);
 void fast_clear_image(t_game *game);
 void draw_vertical_line(t_game *game, int x, int start_y, int end_y, int color);
 double lerp (double a, double b, double t);
@@ -281,7 +290,7 @@ void smooth_player_movement(t_player *player, double delta_time);
 void load_texture(t_game *game);
 void create_fallback_texture(t_game *game, int tex_index);
 int validate_texture_file(char *texture_path);
-void show_loading_progress( t_game *game , int progress);
+// void show_loading_progress( t_game *game , int progress);
 
 //ray
 void get_wall_texture(t_ray *ray);
@@ -289,8 +298,9 @@ int perform_dda(t_dda *dda, t_game *game);
 
 
 //Debug 
-void debug_texture_info(t_game *game);
+// void debug_texture_info(t_game *game);
 
+void	init_game(t_game *game);
 
 void exit_error(char *message);
 // int mlx_pixel_put_img(t_game *game, int x, int y, int color);
@@ -298,7 +308,7 @@ void init_colors(t_game *game);
 // int find_max_width(char *map_str);
 // char *trim_whitespace(char *str);
 // int count_map_rows(char *map_str);
-void clear_image(t_game *game);
+// void clear_image(t_game *game);
 // void init_map(t_map *map, char *map_path);
 void init_player_from_map(t_game *game, t_player *player);
 int close_game(t_game *game);

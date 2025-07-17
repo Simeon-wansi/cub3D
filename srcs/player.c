@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   player.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/16 17:51:56 by sngantch          #+#    #+#             */
+/*   Updated: 2025/07/16 17:51:57 by sngantch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/cub3d.h"
 
 void init_player_from_map(t_game *game, t_player *player)
@@ -21,7 +33,6 @@ void init_player_from_map(t_game *game, t_player *player)
     player->move_right = false;
     player->rotate_left = false;
     player->rotate_right = false;
-
     printf("Debug : player initialized at grid (%d, %d) dir '%c', worl pos(%.2f, %.2f), angle %.2f\n", 
         game->map.player_x, game->map.player_y, game->map.player_dir, player->x, player->y, player->angle);
 }
