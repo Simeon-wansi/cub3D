@@ -6,6 +6,7 @@ PARSER_DIR = srcs/parsing
 SRC  =	$(SRC_DIR)/main.c $(SRC_DIR)/raycasting.c $(SRC_DIR)/init.c \
 		$(SRC_DIR)/player.c $(SRC_DIR)/textures.c $(SRC_DIR)/utils.c \
 		$(SRC_DIR)/moves.c $(SRC_DIR)/drawing.c  $(SRC_DIR)/performance.c\
+		$(SRC_DIR)/mouse.c
 
 
 PARSER_SRC =	$(PARSER_DIR)/parser.c $(PARSER_DIR)/file_handler.c \

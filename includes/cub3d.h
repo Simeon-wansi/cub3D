@@ -39,7 +39,8 @@
 # define X_EVENT_KEY_PRESS 2
 # define X_EVENT_KEY_RELEASE 3
 # define X_EVENT_KEY_EXIT 17
-# define MOUSE_SENSITIVITY 0.001
+# define X_EVENT_MOUSE_MOVE 6
+# define MOUSE_SENSITIVITY 0.01
 
 /* ========== COLORS ========== */
 # define COLOR_RED 0xFF0000
@@ -101,7 +102,7 @@ typedef struct s_timing
 } t_timing;
 
 
-typedef struct s_performance
+typedef struct s_perf
 {
 	double frame_time;
 	double render_time;
@@ -112,7 +113,7 @@ typedef struct s_performance
 	double fps_samples[60];
 	int sample_index;
 	double frame_start;
-} t_performance;
+} t_perf;
 
 typedef struct s_smooth_movement
 {
@@ -130,6 +131,12 @@ typedef struct s_loading
 	bool loading_complete;
 } t_loading;
 
+
+typedef struct s_mouse
+{
+	int last_x;
+	bool is_active;
+} t_mouse;
 
 /* ========== STRUCTURES ========== */
 
@@ -255,8 +262,10 @@ typedef struct s_game
 
 	t_wall		wall;
 	t_timing timing;
-	t_performance perf;
+	t_perf perf;
 	t_loading loading;
+	t_mouse mouse;
+	t_texture text_gun1;
 }	t_game;
 
 
@@ -333,4 +342,10 @@ void draw_line(t_point p0, t_point p1, int color, t_game *game);
 void draw_filled_square(t_point point, int size, int color, t_game *game);
 int close_game(t_game *game);
 // void free_map(char **map);
+
+void update_player_direction(t_player *player);
+int mouse_move(int x, int y, t_game *game);
+int init_mouse(t_game *game);
+
+
 #endif

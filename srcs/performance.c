@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 17:52:13 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/17 19:07:55 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/17 21:49:38 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,14 +106,12 @@ void	draw_vertical_line(t_game *game, int x, int start_y, int end_y,
 		end_y = WINDOW_HEIGHT - 1;
 	pixel_ptr = game->win_img.addr + (y * game->win_img.line_length + x
 			* (game->win_img.bpp / 8));
-	//fats line drawing
 	while (y <= end_y)
 	{
 		if (game->win_img.bpp == 32)
-			*(pixel_ptr) = color; // Directly set pixel for 32 bpp
+			*(pixel_ptr) = color;
 		else
 		{
-			// handling different bit depths
 			pixel_ptr[0] = (color & 0xFF);       // Blue
 			pixel_ptr[1] = (color >> 8) & 0xFF;  // Green
 			pixel_ptr[2] = (color >> 16) & 0xFF; // Red
@@ -121,7 +119,6 @@ void	draw_vertical_line(t_game *game, int x, int start_y, int end_y,
 		pixel_ptr += game->win_img.line_length;
 		y++;
 	}
-	// We update the performance counter
 	game->perf.pixels_drawn += (end_y - start_y + 1);
 }
 
@@ -134,10 +131,9 @@ void	init_smooth_movement(t_player *player)
 {
 	player->smooth.velocity_x = 0.0;
 	player->smooth.velocity_y = 0.0;
-	player->smooth.acceleration = 0.8;  //  units per second squared
-	player->smooth.deceleration = 12.0; // units per second squared
+	player->smooth.acceleration = 0.8;
+	player->smooth.deceleration = 12.0;
 	player->smooth.max_speed = MOVE_SPEED * 20.0;
-	// Maximum speed in units per second
 }
 
 void	set_player_velocity_null(t_player *player, double velocity_x,
@@ -160,25 +156,20 @@ void	new_pos_with_collision_smooth_mvmt(t_player *player, double delta_time)
 		player->y = new_pos.y;
 	}
 	else
-	{ // // If collision detected, reset velocity to zero ,
-		// we stop the smooth movement // player->smooth.velocity_x = 0.0;
-		// player->smooth.velocity_y = 0.0;
-		// if full movement block we try sliding along the walls
-		//try x movement
+	{
 		if (!swept_collision_check(player, new_pos.x, player->y, player->game))
 		{
 			player->x = new_pos.x;
-			player->smooth.velocity_y = 0.0; // Stop vertical movement
-		}                                    //try y movement
+			player->smooth.velocity_y = 0.0;
+		}
 		else if (!swept_collision_check(player, player->x, new_pos.y,
 					player->game))
 		{
 			player->y = new_pos.y;
-			player->smooth.velocity_x = 0.0; // Stop horizontal movement
+			player->smooth.velocity_x = 0.0;
 		}
 		else
 			set_player_velocity_null(player, 0.0, 0.0);
-		// If both movements are blocked, we stop the player
 	}
 }
 
@@ -189,13 +180,14 @@ void	set_targed_speed(t_dpoint *velocity, double velocity_x,
 	velocity->y = velocity_y;
 }
 
-static void update_player_rotation_and_direction(t_player *player, t_dpoint *target_velocity)
+static void	update_player_rotation_and_direction(t_player *player,
+													t_dpoint *target_velocity)
 {
-	if (player->rotate_left) // Handle rotation
+	if (player->rotate_left)
 		player->angle -= ROTATE_SPEED;
 	if (player->rotate_right)
 		player->angle += ROTATE_SPEED;
-	if (player->angle < 0) // Normalize angle to [0, 2*PI]
+	if (player->angle < 0)
 		player->angle += 2 * M_PI;
 	else if (player->angle >= 2 * M_PI)
 		player->angle -= 2 * M_PI;
@@ -205,12 +197,13 @@ static void update_player_rotation_and_direction(t_player *player, t_dpoint *tar
 	target_velocity->y = 0.0;
 }
 
-static void update_velocity(t_player *plyr, t_dpoint *target_velocity, double acceleration, double delta_time)
+static void	update_velocity(t_player *plyr, t_dpoint *target_velocity,
+		double acceleration, double delta_time)
 {
 	plyr->smooth.velocity_x = lerp(plyr->smooth.velocity_x, target_velocity->x,
-		acceleration * delta_time);
+			acceleration * delta_time);
 	plyr->smooth.velocity_y = lerp(plyr->smooth.velocity_y, target_velocity->y,
-		acceleration * delta_time);
+			acceleration * delta_time);
 }
 
 /**
@@ -237,50 +230,47 @@ void	smooth_player_movement(t_player *plyr, double delta_time)
 	update_player_rotation_and_direction(plyr, &target_velocity);
 	if (plyr->move_up)
 		set_targed_speed(&target_velocity, plyr->dx * plyr->smooth.max_speed,
-			plyr->dy * plyr->smooth.max_speed);
+				plyr->dy * plyr->smooth.max_speed);
 	if (plyr->move_down)
-        set_targed_speed(&target_velocity, -plyr->dx * plyr->smooth.max_speed,
-            -plyr->dy * plyr->smooth.max_speed);
+		set_targed_speed(&target_velocity, -plyr->dx * plyr->smooth.max_speed,
+				-plyr->dy * plyr->smooth.max_speed);
 	if (plyr->move_left)
-        set_targed_speed(&target_velocity, -plyr->dy * plyr->smooth.max_speed,
-            plyr->dx * plyr->smooth.max_speed);
+		set_targed_speed(&target_velocity, -plyr->dy * plyr->smooth.max_speed,
+				plyr->dx * plyr->smooth.max_speed);
 	if (plyr->move_right)
-        set_targed_speed(&target_velocity, plyr->dy * plyr->smooth.max_speed,
-            -plyr->dx * plyr->smooth.max_speed);
+		set_targed_speed(&target_velocity, plyr->dy * plyr->smooth.max_speed,
+				-plyr->dx * plyr->smooth.max_speed);
 	if (target_velocity.x != 0 || target_velocity.y != 0)
 		acceleration = plyr->smooth.acceleration;
 	else
 		acceleration = plyr->smooth.deceleration;
 	update_velocity(plyr, &target_velocity, acceleration, delta_time);
 	if (fabs(plyr->smooth.velocity_x) > 0.01
-        || fabs(plyr->smooth.velocity_y) > 0.01)
+		|| fabs(plyr->smooth.velocity_y) > 0.01)
 		new_pos_with_collision_smooth_mvmt(plyr, delta_time);
 }
-
 
 bool	swept_collision_check(t_player *player, double new_x, double new_y,
 		t_game *game)
 {
-	double steps;
-	int i;
-	t_dpoint check;
-	t_dpoint step;
+	double		steps;
+	int			i;
+	t_dpoint	check;
+	t_dpoint	step;
 
-	steps = 10.0; // Number of steps for swept collision check
+	steps = 10.0;
 	step.x = (new_x - player->x) / steps;
 	step.y = (new_y - player->y) / steps;
-
 	i = 0;
 	while (i < steps)
 	{
 		check.x = player->x + step.x * i;
 		check.y = player->y + step.y * i;
-
 		if (is_collision(check.x, check.y, game))
-			return (true); // Collision detected
+			return (true);
 		i++;
 	}
 	if (is_collision(new_x, new_y, game))
 		return (true);
-	return (false); // No collision detected
+	return (false);
 }

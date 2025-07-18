@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 23:06:32 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/16 14:35:49 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/18 20:29:57 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,15 @@ void	exit_error(char *message)
 	exit(EXIT_FAILURE);
 }
 
-void fast_clear_image(t_game *game)
+void	fast_clear_image(t_game *game)
 {
-    ft_memset(game->win_img.addr, 0, WINDOW_HEIGHT
-            * game->win_img.line_length);
+	ft_memset(game->win_img.addr, 0, WINDOW_HEIGHT * game->win_img.line_length);
 }
 
 int	main(int ac, char **av)
 {
-	t_game game;
-	t_arena *arena;
+	t_game	game;
+	t_arena	*arena;
 
 	if (ac != 2)
 	{
@@ -46,6 +45,7 @@ int	main(int ac, char **av)
 	mlx_hook(game.win_ptr, X_EVENT_KEY_RELEASE, 0, key_release, &game);
 	mlx_hook(game.win_ptr, X_EVENT_KEY_EXIT, 0, close_game, &game);
 	mlx_loop_hook(game.mlx_ptr, game_loop, &game);
+	mlx_hook(game.win_ptr, X_EVENT_MOUSE_MOVE, 0, mouse_move, &game);
 	mlx_loop(game.mlx_ptr);
 	arena_destroy(arena);
 	return (EXIT_SUCCESS);
