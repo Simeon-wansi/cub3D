@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 23:15:06 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/19 20:52:22 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/19 22:29:21 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,7 +162,11 @@ void init_ui_textures(t_game *game)
 													"./textures/gun.xpm",
 													&game->text_gun1.width,
 													&game->text_gun1.height);
-	if (!game->text_gun1.img_ptr)
+	game->text_gun2.img_ptr = mlx_xpm_file_to_image(game->mlx_ptr,
+													"./textures/gun2.xpm",
+													&game->text_gun2.width,
+													&game->text_gun2.height);
+	if (!game->text_gun1.img_ptr || !game->text_gun2.img_ptr)
 	{
 		ft_printf("Error: Failed to load gun texture\n");
 		exit(EXIT_FAILURE);
@@ -171,21 +175,32 @@ void init_ui_textures(t_game *game)
 												&game->text_gun1.bpp,
 												&game->text_gun1.line_length,
 												&game->text_gun1.endian);
-	if (!game->text_gun1.addr)
+	game->text_gun2.addr = mlx_get_data_addr(game->text_gun2.img_ptr,
+												&game->text_gun2.bpp,
+												&game->text_gun2.line_length,
+												&game->text_gun2.endian);
+	if (!game->text_gun1.addr || !game->text_gun2.addr)
 	{
 		ft_printf("Error: Failed to get gun texture data address\n");
 		exit(EXIT_FAILURE);
 	}
-	// game->show_texture_b = false;
+	game->show_gun2 = false;
 }
 
 //Now the function to draw the gun on the screen
 void draw_ui(t_game *game)
 {
-	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
-							game->text_gun1.img_ptr,
-							(WINDOW_WIDTH - game->text_gun1.width) / 2,
-							WINDOW_HEIGHT - game->text_gun1.height);
+	if (game->show_gun2 == false)
+		mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
+								game->text_gun1.img_ptr,
+								(WINDOW_WIDTH - game->text_gun1.width) / 2,
+								WINDOW_HEIGHT - game->text_gun1.height);
+	else
+		mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
+							game->text_gun2.img_ptr,
+							(WINDOW_WIDTH - game->text_gun2.width) / 2,
+							WINDOW_HEIGHT - game->text_gun2.height);
+							
 }
 
 // void load_texture(t_game *game)

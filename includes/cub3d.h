@@ -41,7 +41,7 @@
 # define X_EVENT_KEY_RELEASE 3
 # define X_EVENT_KEY_EXIT 17
 # define X_EVENT_MOUSE_MOVE 6
-# define MOUSE_SENSITIVITY 0.01
+# define MOUSE_SENSITIVITY 0.001
 
 /* ========== COLORS ========== */
 # define COLOR_RED 0xFF0000
@@ -267,6 +267,8 @@ typedef struct s_game
 	t_loading loading;
 	t_mouse mouse;
 	t_texture text_gun1;
+	t_texture text_gun2;
+	bool show_gun2;
 }	t_game;
 
 

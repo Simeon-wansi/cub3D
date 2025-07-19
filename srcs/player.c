@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 17:51:56 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/18 20:26:40 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/19 22:40:52 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,13 @@ int	key_press(int key_code, t_game *game)
 		player->rotate_left = true;
 	else if (key_code == KEY_RIGHT)
 		player->rotate_right = true;
+	else if (key_code == KEY_SPACE)
+	    game->show_gun2 = true;
 	else if (key_code == KEY_ESC)
 		close_game(game);
 	return (0);
 }
+
 
 void update_player_direction(t_player *player)
 {
@@ -66,6 +69,7 @@ int	key_release(int key_code, t_game *game)
 {
 	t_player	*player;
 
+	
 	player = &game->player;
 	if (key_code == KEY_W)
 		player->move_up = false;
@@ -79,6 +83,8 @@ int	key_release(int key_code, t_game *game)
 		player->rotate_left = false;
 	else if (key_code == KEY_RIGHT)
 		player->rotate_right = false;
+	else if (key_code == KEY_SPACE)
+	    game->show_gun2 = false;
 	return (0);
 }
 
