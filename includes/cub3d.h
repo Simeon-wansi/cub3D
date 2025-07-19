@@ -35,6 +35,7 @@
 # define KEY_D 2
 # define KEY_LEFT 123
 # define KEY_RIGHT 124
+# define KEY_SPACE 49
 
 # define X_EVENT_KEY_PRESS 2
 # define X_EVENT_KEY_RELEASE 3
@@ -346,6 +347,6 @@ int close_game(t_game *game);
 void update_player_direction(t_player *player);
 int mouse_move(int x, int y, t_game *game);
 int init_mouse(t_game *game);
-
-
+void draw_ui(t_game *game);
+void init_ui_textures(t_game *game);
 #endif

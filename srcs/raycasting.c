@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 17:51:46 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/17 22:00:32 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/19 22:17:34 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -349,9 +349,15 @@ int	game_loop(t_game *game)
 		draw_lines_dda(player, game, start_x, i);
 		start_x += fraction;
 	}
+	
 	draw_minimap(game);
 	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->win_img.img_ptr,
 			0, 0);
 	track_performance(game);
+	draw_ui(game);
 	return (0);
+	
+	
 }
+
+

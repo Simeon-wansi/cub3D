@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 23:15:06 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/17 22:12:21 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/19 20:52:22 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ void	initiate_texture(t_game *game)
 	game->loading.loading_complete = false;
 }
 
+
 static void	get_texture_data_addr(t_game *game, int i)
 {
 	game->textures[i].addr = mlx_get_data_addr(game->textures[i].img_ptr,
@@ -153,6 +154,38 @@ void	load_texture(t_game *game)
 		}
 	}
 	game->loading.loading_complete = true;
+}
+// Now I time to set the txture of the gun located in /texture/gun.x
+void init_ui_textures(t_game *game)
+{
+	game->text_gun1.img_ptr = mlx_xpm_file_to_image(game->mlx_ptr,
+													"./textures/gun.xpm",
+													&game->text_gun1.width,
+													&game->text_gun1.height);
+	if (!game->text_gun1.img_ptr)
+	{
+		ft_printf("Error: Failed to load gun texture\n");
+		exit(EXIT_FAILURE);
+	}
+	game->text_gun1.addr = mlx_get_data_addr(game->text_gun1.img_ptr,
+												&game->text_gun1.bpp,
+												&game->text_gun1.line_length,
+												&game->text_gun1.endian);
+	if (!game->text_gun1.addr)
+	{
+		ft_printf("Error: Failed to get gun texture data address\n");
+		exit(EXIT_FAILURE);
+	}
+	// game->show_texture_b = false;
+}
+
+//Now the function to draw the gun on the screen
+void draw_ui(t_game *game)
+{
+	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
+							game->text_gun1.img_ptr,
+							(WINDOW_WIDTH - game->text_gun1.width) / 2,
+							WINDOW_HEIGHT - game->text_gun1.height);
 }
 
 // void load_texture(t_game *game)

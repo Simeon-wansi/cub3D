@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 17:52:03 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/18 20:43:33 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/19 21:30:54 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	init_game(t_game *game)
 	init_smooth_movement(&game->player);
 	printf("Debug: Game initialization started\n");
 	init_mouse(game);
+	init_ui_textures(game);
 	printf("Debug: Mouse initialized\n");
 	game->game_running = true;
 }
