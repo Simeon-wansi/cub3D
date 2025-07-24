@@ -6,11 +6,11 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 17:52:00 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/17 21:51:50 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/24 22:28:03 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
+#include "../../includes/cub3d.h"
 
 void	put_pixel(int x, int y, int color, t_game *game)
 {
@@ -19,9 +19,9 @@ void	put_pixel(int x, int y, int color, t_game *game)
 	if (x >= WINDOW_WIDTH || x < 0 || y >= WINDOW_HEIGHT || y < 0)
 		return ;
 	pixel_index = y * game->win_img.line_length + x * (game->win_img.bpp / 8);
-	game->win_img.addr[pixel_index] = color & 0xFF;             // Blue
-	game->win_img.addr[pixel_index + 1] = (color >> 8) & 0xFF;  // Green
-	game->win_img.addr[pixel_index + 2] = (color >> 16) & 0xFF; // Red
+	game->win_img.addr[pixel_index] = color & 0xFF;
+	game->win_img.addr[pixel_index + 1] = (color >> 8) & 0xFF;
+	game->win_img.addr[pixel_index + 2] = (color >> 16) & 0xFF;
 }
 
 void	draw_filled_square(t_point point, int size, int color, t_game *game)
@@ -42,7 +42,7 @@ void	draw_filled_square(t_point point, int size, int color, t_game *game)
 	}
 }
 
-static void	calculate_line_parameters(t_point p0, t_point p1, t_point *d,
+static void	calculate_line_params(t_point p0, t_point p1, t_point *d,
 		t_point *s)
 {
 	d->x = abs(p1.x - p0.x);
@@ -56,7 +56,6 @@ static void	calculate_line_parameters(t_point p0, t_point p1, t_point *d,
 	else
 		s->y = -1;
 }
-// using bresenham's algorithm
 
 void	draw_line(t_point p0, t_point p1, int color, t_game *game)
 {
@@ -65,7 +64,7 @@ void	draw_line(t_point p0, t_point p1, int color, t_game *game)
 	int		err;
 	int		e2;
 
-	calculate_line_parameters(p0, p1, &d, &s);
+	calculate_line_params(p0, p1, &d, &s);
 	err = d.x - d.y;
 	while (1)
 	{
@@ -83,5 +82,26 @@ void	draw_line(t_point p0, t_point p1, int color, t_game *game)
 			err += d.x;
 			p0.y += s.y;
 		}
+	}
+}
+
+void	draw_floor_and_ceiling(t_game *game, int start_y, int end_y, int column)
+{
+	int	y;
+	int	color;
+
+	color = game->ceiling_color;
+	y = 0;
+	while (y < start_y)
+	{
+		put_pixel(column, y, color, game);
+		y++;
+	}
+	color = game->floor_color;
+	y = end_y;
+	while (y < WINDOW_HEIGHT)
+	{
+		put_pixel(column, y, color, game);
+		y++;
 	}
 }

@@ -6,11 +6,11 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 23:09:39 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/17 21:50:01 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:23:13 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
+#include "../../includes/cub3d.h"
 
 void	move_up(t_player *player)
 {
@@ -59,6 +59,7 @@ void	move_down(t_player *player)
 		}
 	}
 }
+
 void	move_left(t_player *player)
 {
 	double	new_x;
@@ -99,7 +100,6 @@ void	move_right(t_player *player)
 		}
 		else
 		{
-			// Try sliding along the walls
 			if (!is_collision(new_x, player->y, player->game))
 				player->x = new_x;
 			if (!is_collision(player->x, new_y, player->game))

@@ -3,10 +3,12 @@ NAME =  cub3d
 SRC_DIR = srcs
 PARSER_DIR = srcs/parsing
 
-SRC  =	$(SRC_DIR)/main.c $(SRC_DIR)/raycasting.c $(SRC_DIR)/init.c \
-		$(SRC_DIR)/player.c $(SRC_DIR)/textures.c $(SRC_DIR)/utils.c \
-		$(SRC_DIR)/moves.c $(SRC_DIR)/drawing.c  $(SRC_DIR)/performance.c\
-		$(SRC_DIR)/mouse.c
+SRC  =	$(SRC_DIR)/main.c $(SRC_DIR)/raycasting/raycasting.c $(SRC_DIR)/raycasting/raycasting_utils.c \
+		$(SRC_DIR)/player/player.c $(SRC_DIR)/textures/textures.c $(SRC_DIR)/draw/close_game.c  $(SRC_DIR)/raycasting/render.c\
+		$(SRC_DIR)/draw/drawing.c  $(SRC_DIR)/performance/performance.c\
+		$(SRC_DIR)/draw/mouse.c $(SRC_DIR)/performance/performance_utils.c \
+		$(SRC_DIR)/performance/timing.c $(SRC_DIR)/textures/textures_utils.c \
+		$(SRC_DIR)/player/collision.c $(SRC_DIR)/movement/moves.c $(SRC_DIR)/movement/keys.c\
 
 
 PARSER_SRC =	$(PARSER_DIR)/parser.c $(PARSER_DIR)/file_handler.c \
