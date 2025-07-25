@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 19:52:47 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/24 22:30:25 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/25 20:00:16 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	init_ui_textures(t_game *game)
 			"./textures/gun2.xpm", &game->text_gun2.width,
 			&game->text_gun2.height);
 	if (!game->text_gun1.img_ptr || !game->text_gun2.img_ptr)
-		exit_error("Failed to load gun textures");
+		cleanup_and_exit(game, "Failed to load gun textures");
 	game->text_gun1.addr = mlx_get_data_addr(game->text_gun1.img_ptr,
 			&game->text_gun1.bpp, &game->text_gun1.line_length,
 			&game->text_gun1.endian);
@@ -64,7 +64,7 @@ void	init_ui_textures(t_game *game)
 			&game->text_gun2.bpp, &game->text_gun2.line_length,
 			&game->text_gun2.endian);
 	if (!game->text_gun1.addr || !game->text_gun2.addr)
-		exit_error("Failed to get gun texture data address");
+		cleanup_and_exit(game, "Failed to get gun texture data address");
 	game->show_gun2 = false;
 }
 

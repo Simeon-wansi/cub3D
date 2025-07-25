@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 22:34:45 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/24 22:35:52 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/25 20:00:33 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -350,7 +350,7 @@ void    track_performance(t_game *game);
 double  get_time(void);
 
 /* ----- Utility Functions ----- */
-void    exit_error(char *message);
+void	cleanup_and_exit(t_game *game, char *message);
 double  lerp(double a, double b, double t);
 
 #endif

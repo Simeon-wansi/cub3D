@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 23:06:32 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/25 13:09:35 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/25 19:59:43 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,15 @@ void	init_game(t_game *game)
 	init_colors(game);
 	game->mlx_ptr = mlx_init();
 	if (!game->mlx_ptr)
-		exit_error("Error initializing mlx");
+		cleanup_and_exit(game, "Error initializing mlx");
 	game->win_ptr = mlx_new_window(game->mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT,
 			"Cub3D");
 	if (!game->win_ptr)
-		exit_error("Error creating window");
+		cleanup_and_exit(game, "Error creating window");
 	game->win_img.img_ptr = mlx_new_image(game->mlx_ptr, WINDOW_WIDTH,
 			WINDOW_HEIGHT);
 	if (!game->win_img.img_ptr)
-		exit_error("Error creating image");
+		cleanup_and_exit(game, "Error creating image");
 	game->win_img.addr = mlx_get_data_addr(game->win_img.img_ptr,
 			&game->win_img.bpp,
 			&game->win_img.line_length,
