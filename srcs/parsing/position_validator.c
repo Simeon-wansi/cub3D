@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   position_validator.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmensah- <hmensah-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 19:00:00 by hmensah-          #+#    #+#             */
-/*   Updated: 2025/07/03 19:00:00 by hmensah-         ###   ########.fr       */
+/*   Updated: 2025/07/25 13:12:43 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	get_cell_at_position(t_config *config, int i, int j)
 {
 	int	row_len;
-	
+
 	if (i < 0 || i >= config->map.rows)
 		return (' ');
 	row_len = ft_strlen(config->map.board[i]);
@@ -35,7 +35,6 @@ bool	check_adjacent_cells(t_config *config, int i, int j)
 	down = get_cell_at_position(config, i + 1, j);
 	left = get_cell_at_position(config, i, j - 1);
 	right = get_cell_at_position(config, i, j + 1);
-	
 	if (!is_valid_map_char(up) || !is_valid_map_char(down))
 		return (false);
 	if (!is_valid_map_char(left) || !is_valid_map_char(right))
