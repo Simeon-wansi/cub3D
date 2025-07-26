@@ -6,7 +6,7 @@
 /*   By: hmensah- <hmensah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 19:00:00 by hmensah-          #+#    #+#             */
-/*   Updated: 2025/07/03 19:00:00 by hmensah-         ###   ########.fr       */
+/*   Updated: 2025/07/26 21:52:28 by hmensah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ t_list	*read_remaining_lines(int fd, t_list *current, t_list *head)
 	{
 		line = get_next_line(fd);
 		if (!line)
-			break;
+			break ;
 		current->next = ft_lstnew(line);
 		if (!current->next)
 		{

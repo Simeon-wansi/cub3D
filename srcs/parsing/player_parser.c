@@ -6,7 +6,7 @@
 /*   By: hmensah- <hmensah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 19:00:00 by hmensah-          #+#    #+#             */
-/*   Updated: 2025/07/03 15:36:54 by hmensah-         ###   ########.fr       */
+/*   Updated: 2025/07/26 22:05:08 by hmensah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,22 +54,4 @@ bool	find_player_position_p(t_config *config)
 		i++;
 	}
 	return (player_count == 1);
-}
-
-void	print_config(t_config *config)
-{
-	if (!config)
-		return ;
-	printf("=== Configuration ===\n");
-	printf("North texture: %s\n", config->textures.north);
-	printf("South texture: %s\n", config->textures.south);
-	printf("West texture: %s\n", config->textures.west);
-	printf("East texture: %s\n", config->textures.east);
-	printf("Floor color: %d,%d,%d\n", config->colors.floor_r,
-		config->colors.floor_g, config->colors.floor_b);
-	printf("Ceiling color: %d,%d,%d\n", config->colors.ceiling_r,
-		config->colors.ceiling_g, config->colors.ceiling_b);
-	printf("Player position: (%d,%d) facing %c\n", config->map.player_pos_x,
-		config->map.player_pos_y, config->map.player_dir);
-	printf("Map dimensions: %dx%d\n", config->map.cols, config->map.rows);
 }

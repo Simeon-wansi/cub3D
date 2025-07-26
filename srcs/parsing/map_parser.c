@@ -6,7 +6,7 @@
 /*   By: hmensah- <hmensah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 19:00:00 by hmensah-          #+#    #+#             */
-/*   Updated: 2025/07/03 15:29:55 by hmensah-         ###   ########.fr       */
+/*   Updated: 2025/07/26 21:59:56 by hmensah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,11 @@ bool	copy_map_line(t_config *config, char *line, int index, t_arena *arena)
 
 	trimmed = skip_whitespace(line);
 	trim_newline(trimmed);
-	
 	if (!validate_map_line(trimmed))
 	{
 		print_error("Invalid character in map");
 		return (false);
 	}
-	
 	config->map.board[index] = arena_alloc(arena, ft_strlen(trimmed) + 1);
 	if (!config->map.board[index])
 		return (false);
@@ -64,14 +62,15 @@ bool	populate_map_board(t_list *map_start, t_config *config, t_arena *arena)
 {
 	t_list	*current;
 	int		i;
-	
+	char	*trimmed;
+	char	*line;
+
 	current = map_start;
 	i = 0;
 	while (current && i < config->map.rows)
 	{
-		char *line = (char *)current->content;
-		char *trimmed = skip_whitespace(line);
-		
+		line = (char *)current->content;
+		trimmed = skip_whitespace(line);
 		if (*trimmed)
 		{
 			if (!copy_map_line(config, line, i, arena))

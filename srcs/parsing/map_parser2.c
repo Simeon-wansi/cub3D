@@ -6,7 +6,7 @@
 /*   By: hmensah- <hmensah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 19:00:00 by hmensah-          #+#    #+#             */
-/*   Updated: 2025/07/03 15:37:48 by hmensah-         ###   ########.fr       */
+/*   Updated: 2025/07/26 22:02:28 by hmensah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ bool	validate_map_structure(t_config *config)
 		print_error("Map must contain exactly one player (N, S, E, or W)");
 		return (false);
 	}
-	
 	if (!is_map_closed(config))
 	{
 		print_error("Map must be closed/surrounded by walls");
@@ -38,13 +37,10 @@ bool	parse_map(t_list *map_start, t_config *config, t_arena *arena)
 		print_error("Empty map");
 		return (false);
 	}
-	
 	if (!allocate_map_board(config, row_count, arena))
 		return (false);
-	
 	if (!populate_map_board(map_start, config, arena))
 		return (false);
-	
 	return (validate_map_structure(config));
 }
 
@@ -52,10 +48,8 @@ t_list	*build_map_line_list(char *filename)
 {
 	if (!validate_file_extension(filename))
 		return (NULL);
-	
 	if (!can_open_file(filename))
 		return (NULL);
-		
 	return (read_file_to_list(filename));
 }
 
