@@ -6,13 +6,23 @@
 /*   By: hmensah- <hmensah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 19:00:00 by hmensah-          #+#    #+#             */
-/*   Updated: 2025/07/03 19:00:00 by hmensah-         ###   ########.fr       */
+/*   Updated: 2025/07/28 14:52:26 by hmensah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser_utils.h"
 
-bool	process_config_line(t_list *current, t_config *config, 
+/**
+ * Sets player information in the map
+ */
+void	set_player_info(t_config *config, t_map *map)
+{
+	map->player_dir = config->map.player_dir;
+	map->player_x = config->map.player_pos_x;
+	map->player_y = config->map.player_pos_y;
+}
+
+bool	process_config_line(t_list *current, t_config *config,
 		t_arena *arena, t_list **map_start)
 {
 	char	*trimmed;
@@ -51,16 +61,14 @@ bool	parse_config_elements(t_list *lines, t_config *config,
 	while (current)
 	{
 		if (!process_config_line(current, config, arena, map_start))
-			break;
+			break ;
 		current = current->next;
 	}
-	
 	if (!validate_required_elements(config))
 	{
 		print_error("Missing required configuration elements");
 		return (false);
 	}
-	
 	if (!*map_start)
 	{
 		print_error("No map found in file");

@@ -6,7 +6,7 @@
 /*   By: hmensah- <hmensah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 19:00:00 by hmensah-          #+#    #+#             */
-/*   Updated: 2025/07/26 22:11:07 by hmensah-         ###   ########.fr       */
+/*   Updated: 2025/07/28 14:40:19 by hmensah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_textures
 	char	*south;
 	char	*west;
 	char	*east;
-}   t_textures;
+}	t_textures;
 
 typedef struct s_colors
 {
@@ -40,17 +40,17 @@ typedef struct s_colors
 	int		ceiling_r;
 	int		ceiling_g;
 	int		ceiling_b;
-}   t_colors;
+}	t_colors;
 
 typedef struct s_map2
 {
-	char    **board;
-	int     cols;
-	int     rows;
-	int     player_pos_x;
-	int     player_pos_y;
-	char    player_dir;
-}   t_map2;
+	char	**board;
+	int		cols;
+	int		rows;
+	int		player_pos_x;
+	int		player_pos_y;
+	char	player_dir;
+}	t_map2;
 
 typedef struct s_config
 {
@@ -63,7 +63,7 @@ typedef struct s_config
 	bool		parsed_ea;
 	bool		parsed_f;
 	bool		parsed_c;
-}   t_config;
+}	t_config;
 
 /* file_handler.c */
 bool		validate_file_extension(char *filename);
@@ -87,14 +87,19 @@ bool		parse_color_values(char **rgb_parts, int *r, int *g, int *b);
 bool		parse_color_p(char *line, int *r, int *g, int *b);
 
 /* texture_parser.c */
-bool		allocate_texture_path(char *path, char **texture_path, t_arena *arena);
+bool		allocate_texture_path(char *path, char **texture_path,
+				t_arena *arena);
 bool		parse_texture(char *line, char **texture_path, t_arena *arena);
-bool		handle_north_texture(char *content, t_config *config, t_arena *arena);
-bool		handle_south_texture(char *content, t_config *config, t_arena *arena);
-bool		handle_west_texture(char *content, t_config *config, t_arena *arena);
+bool		handle_north_texture(char *content, t_config *config,
+				t_arena *arena);
+bool		handle_south_texture(char *content, t_config *config,
+				t_arena *arena);
+bool		handle_west_texture(char *content, t_config *config,
+				t_arena *arena);
 
 /* element_parser.c */
-bool		handle_east_texture(char *content, t_config *config, t_arena *arena);
+bool		handle_east_texture(char *content, t_config *config,
+				t_arena *arena);
 bool		handle_floor_color(char *content, t_config *config);
 bool		handle_ceiling_color(char *content, t_config *config);
 bool		parse_element(char *line, t_config *config, t_arena *arena);
@@ -128,9 +133,12 @@ void		print_config(t_config *config);
 
 /* map_parser.c */
 int			count_map_rows_p(t_list *map_start);
-bool		allocate_map_board(t_config *config, int row_count, t_arena *arena);
-bool		copy_map_line(t_config *config, char *line, int index, t_arena *arena);
-bool		populate_map_board(t_list *map_start, t_config *config, t_arena *arena);
+bool		allocate_map_board(t_config *config, int row_count,
+				t_arena *arena);
+bool		copy_map_line(t_config *config, char *line, int index,
+				t_arena *arena);
+bool		populate_map_board(t_list *map_start, t_config *config,
+				t_arena *arena);
 
 /* map_parser2.c */
 bool		validate_map_structure(t_config *config);
