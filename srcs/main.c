@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 23:06:32 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/25 19:59:43 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/01 13:26:26 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,18 +76,17 @@ void	init_game(t_game *game)
 int	main(int ac, char **av)
 {
 	t_game	game;
-	t_arena	*arena;
 
 	if (ac != 2)
 	{
 		ft_printf("Error\nUsage: %s <map_file>\n", av[0]);
 		return (EXIT_FAILURE);
 	}
-	arena = arena_create(1024 * 1024);
-	if (!arena)
+	game.arena = arena_create(1024 * 1024);
+	if (!game.arena)
 		return (ft_printf("Error\nFailed to create memory\n"), 1);
-	if (!init_map_using_parser(&game.map, av[1], arena))
-		return (arena_destroy(arena), EXIT_FAILURE);
+	if (!init_map_using_parser(&game.map, av[1], game.arena))
+		return (arena_destroy(game.arena), EXIT_FAILURE);
 	init_game(&game);
 	mlx_hook(game.win_ptr, X_EVENT_KEY_PRESS, 0, key_press, &game);
 	mlx_hook(game.win_ptr, X_EVENT_KEY_RELEASE, 0, key_release, &game);
@@ -95,6 +94,6 @@ int	main(int ac, char **av)
 	mlx_loop_hook(game.mlx_ptr, game_loop, &game);
 	mlx_hook(game.win_ptr, X_EVENT_MOUSE_MOVE, 0, mouse_move, &game);
 	mlx_loop(game.mlx_ptr);
-	arena_destroy(arena);
+	arena_destroy(game.arena);
 	return (EXIT_SUCCESS);
 }
