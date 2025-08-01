@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 23:15:14 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/01 13:27:52 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/01 21:51:14 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ int	close_game(t_game *game)
 		{
 			mlx_destroy_image(game->mlx_ptr, game->textures[i].img_ptr);
 			game->textures[i].img_ptr = NULL;
-			printf("Texture %d destroyed\n", i);
 		}
 		i++;
 	}

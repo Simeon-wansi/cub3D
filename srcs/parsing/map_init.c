@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_init.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmensah- <hmensah-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 19:00:00 by hmensah-          #+#    #+#             */
-/*   Updated: 2025/07/26 21:58:22 by hmensah-         ###   ########.fr       */
+/*   Updated: 2025/08/01 21:52:11 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,5 @@ bool	init_map_using_parser(t_map *map, char *map_path, t_arena *arena)
 		ft_printf("Error: Failed to convert config to map\n");
 		return (false);
 	}
-	printf("Debug: Map loaded with %d rows and %d columns\n",
-		map->height, map->width);
 	return (true);
 }
