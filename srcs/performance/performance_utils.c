@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 19:04:55 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/24 22:29:07 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/01 21:55:39 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,32 +97,3 @@ bool	swept_collision_check(t_player *player, double new_x, double new_y,
 		return (true);
 	return (false);
 }
-
-// void	draw_vertical_line(t_game *game, int x, int start_y, int end_y,
-// 		int color)
-// {
-// 	int		y;
-// 	char	*pixel_ptr;
-
-// 	y = start_y;
-// 	if (y < 0)
-// 		y = 0;
-// 	if (end_y >= WINDOW_HEIGHT)
-// 		end_y = WINDOW_HEIGHT - 1;
-// 	pixel_ptr = game->win_img.addr + (y * game->win_img.line_length + x
-// 			* (game->win_img.bpp / 8));
-// 	while (y <= end_y)
-// 	{
-// 		if (game->win_img.bpp == 32)
-// 			*(pixel_ptr) = color;
-// 		else
-// 		{
-// 			pixel_ptr[0] = (color & 0xFF);       // Blue
-// 			pixel_ptr[1] = (color >> 8) & 0xFF;  // Green
-// 			pixel_ptr[2] = (color >> 16) & 0xFF; // Red
-// 		}
-// 		pixel_ptr += game->win_img.line_length;
-// 		y++;
-// 	}
-// 	game->perf.pixels_drawn += (end_y - start_y + 1);
-// }

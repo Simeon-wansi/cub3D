@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 23:15:14 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/25 20:01:28 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/01 21:51:14 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	cleanup_and_exit(t_game *game, char *message)
 		mlx_destroy_image(game->mlx_ptr, game->text_gun1.img_ptr);
 	if (game->text_gun2.img_ptr)
 		mlx_destroy_image(game->mlx_ptr, game->text_gun2.img_ptr);
+	arena_destroy(game->arena);
 	exit(EXIT_FAILURE);
 }
 
@@ -46,7 +47,6 @@ int	close_game(t_game *game)
 		{
 			mlx_destroy_image(game->mlx_ptr, game->textures[i].img_ptr);
 			game->textures[i].img_ptr = NULL;
-			printf("Texture %d destroyed\n", i);
 		}
 		i++;
 	}
@@ -59,6 +59,7 @@ int	close_game(t_game *game)
 		mlx_destroy_image(game->mlx_ptr, game->win_img.img_ptr);
 	if (game->win_ptr)
 		mlx_destroy_window(game->mlx_ptr, game->win_ptr);
+	arena_destroy(game->arena);
 	printf("Game closed successfully\n");
 	exit(EXIT_SUCCESS);
 }

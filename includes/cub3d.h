@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 22:34:45 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/25 20:00:33 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/01 13:24:58 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 /* ========== INCLUDES ========== */
 # include "minilibx_opengl_20191021/mlx.h"
+# include "libft/arena.h"
 # include "libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>
@@ -265,6 +266,7 @@ typedef struct s_game
     void        *win_ptr;
     t_img       win_img;
     t_map       map;
+    t_arena     *arena;
     t_player    player;
     t_texture   textures[4];
     int         floor_color;
