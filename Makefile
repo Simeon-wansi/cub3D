@@ -12,7 +12,17 @@ INC_DIR = includes
 
 # External libraries
 LIBFT_DIR = $(INC_DIR)/libft
-MLX_DIR = $(INC_DIR)/minilibx_opengl_20191021
+
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Darwin)
+    MLX_DIR = $(INC_DIR)/minilibx_opengl_20191021
+	FRAMEWORK = -framework OpenGL -framework AppKit
+else ifeq ($(UNAME_S),Linux)
+    MLX_DIR = $(INC_DIR)/minilibx_linux
+	FRAMEWORK = -lXext -lX11 -lm -lz
+else
+    $(error Unsupported operating system: $(UNAME_S))
+endif
 
 # ========== Library Settings ==========
 LIBFT_LIB = $(LIBFT_DIR)/libft.a
@@ -20,9 +30,6 @@ MLX_LIB = $(MLX_DIR)/libmlx.a
 
 # Include paths
 INCLUDES = -I$(INC_DIR) -I$(LIBFT_DIR) -I$(MLX_DIR)
-
-# Mac-specific frameworks
-FRAMEWORK = -framework OpenGL -framework AppKit
 
 # ========== Source Files ==========
 # Core files
