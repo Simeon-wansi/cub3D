@@ -19,7 +19,7 @@ ifeq ($(UNAME_S),Darwin)
 	FRAMEWORK = -framework OpenGL -framework AppKit
 else ifeq ($(UNAME_S),Linux)
     MLX_DIR = $(INC_DIR)/minilibx_linux
-	FRAMEWORK = -lXext -lX11 -lm -lz
+	FRAMEWORK = -L$(MLX_DIR) -lmlx_Linux -lXext -lX11 -lm -lz
 else
     $(error Unsupported operating system: $(UNAME_S))
 endif
