@@ -86,19 +86,7 @@ Raycasting is a 3D rendering technique that creates the illusion of a 3D environ
 xcode-select --install
 
 # MLX library (included in project)
-# No additional installation required
-```
 
-#### For Linux:
-```bash
-# Required packages
-sudo apt-get update
-sudo apt-get install gcc make xorg libxext-dev libbsd-dev
-
-# Or for other distributions:
-# Red Hat/Fedora: sudo dnf install gcc make xorg-x11-devel libXext-devel
-# Arch: sudo pacman -S gcc make xorg-server-devel libxext
-```
 
 ### Building the Project
 

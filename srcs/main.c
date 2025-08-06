@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 23:06:32 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/01 13:26:26 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/07 01:18:08 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,6 @@ void	init_colors(t_game *game)
 	green = game->map.ceiling_color.green;
 	blue = game->map.ceiling_color.blue;
 	game->ceiling_color = (red << 16) | (green << 8) | blue;
-	ft_printf("Floor color initialized to R: %d, G: %d, B: %d\n",
-		game->map.floor_color.red,
-		game->map.floor_color.green,
-		game->map.floor_color.blue);
 }
 
 static void	init_game_logic(t_game *game)
@@ -73,13 +69,35 @@ void	init_game(t_game *game)
 	init_game_logic(game);
 }
 
+static void	show_message(void)
+{
+	printf("\033[1;36m");
+	printf("   ██████╗██╗   ██╗██████╗ ██████╗ ██████╗ \n");
+	printf("  ██╔════╝██║   ██║██╔══██╗╚════██╗██╔══██╗\n");
+	printf("  ██║     ██║   ██║██████╔╝ █████╔╝██║  ██║\n");
+	printf("  ██║     ██║   ██║██╔══██╗ ╚═══██╗██║  ██║\n");
+	printf("  ╚██████╗╚██████╔╝██████╔╝██████╔╝██████╔╝\033[0m\n");
+	printf("\033[1;33m   ╚═════╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚═════╝\033[0m\n\n");
+	printf("\033[1;32m════════════════════════════════════════════\033[0m\n");
+	printf("\033[1;37m           🎮 3D RAYCASTING ENGINE 🎮\033[0m\n");
+	printf("\033[1;32m════════════════════════════════════════════\033[0m\n");
+	printf("\033[1;34mUsage: ./cub3d [map_file]\033[0m\n\n");
+	printf("\033[1;33m### Movement Controls ###\033[0m\n");
+	printf("\033[1;31mW/S\033[0m: Forward/Backward  ");
+	printf("\033[1;31mA/D\033[0m: Strafe Left/Right\n");
+	printf("\033[1;31m←/→\033[0m: Rotate Left/Right ");
+	printf("\033[1;31mESC\033[0m: Exit Game\n");
+	printf("\033[1;31mSPACE\033[0m: Toggle Weapon   ");
+	printf("\033[1;35mPress ESC to exit\033[0m\n");
+}
+
 int	main(int ac, char **av)
 {
 	t_game	game;
 
 	if (ac != 2)
 	{
-		ft_printf("Error\nUsage: %s <map_file>\n", av[0]);
+		show_message();
 		return (EXIT_FAILURE);
 	}
 	game.arena = arena_create(1024 * 1024);

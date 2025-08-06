@@ -13,16 +13,9 @@ INC_DIR = includes
 # External libraries
 LIBFT_DIR = $(INC_DIR)/libft
 
-UNAME_S := $(shell uname -s)
-ifeq ($(UNAME_S),Darwin)
-    MLX_DIR = $(INC_DIR)/minilibx_opengl_20191021
-	FRAMEWORK = -framework OpenGL -framework AppKit
-else ifeq ($(UNAME_S),Linux)
-    MLX_DIR = $(INC_DIR)/minilibx_linux
-	FRAMEWORK = -L$(MLX_DIR) -lmlx_Linux -lXext -lX11 -lm -lz
-else
-    $(error Unsupported operating system: $(UNAME_S))
-endif
+MLX_DIR = $(INC_DIR)/minilibx_opengl_20191021
+FRAMEWORK = -framework OpenGL -framework AppKit
+
 
 # ========== Library Settings ==========
 LIBFT_LIB = $(LIBFT_DIR)/libft.a

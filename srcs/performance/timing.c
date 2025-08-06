@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 19:06:16 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/24 21:29:55 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/07 00:58:39 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	init_timing(t_game *game)
 	game->timing.last_frame_time = current_time;
 	game->timing.frame_start = 0.016;
 	game->timing.fps = 60.0;
-	ft_printf("Timing system initialized\n");
 }
 
 double	lerp(double a, double b, double t)

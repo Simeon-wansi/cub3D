@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 17:52:13 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/24 19:07:42 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/07 00:58:23 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	init_performance(t_game *game)
 		game->perf.fps_samples[i] = 0.0;
 		i++;
 	}
-	ft_printf("Performance monitoring initialized.\n");
 }
 
 void	track_performance(t_game *game)
