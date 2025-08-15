@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 19:26:45 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/01 13:47:28 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/15 20:16:18 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,40 +41,60 @@ void	caculate_step_dir_and_side_dist(t_dda *dda, t_player *player,
 
 void	calculate_texture_position(double wall_x, t_ray *ray)
 {
-	wall_x = wall_x / BLOCK_SIZE;
-	ray->tex_pos = wall_x - floor(wall_x);
+	double	normalized_pos;
+
+	normalized_pos = fmod(wall_x, BLOCK_SIZE);
+	if (normalized_pos < 0)
+		normalized_pos += BLOCK_SIZE;
+	ray->tex_pos = normalized_pos / BLOCK_SIZE;
+	if (ray->tex_pos < 0.0)
+		ray->tex_pos = 0.0;
+	if (ray->tex_pos >= 1.0)
+		ray->tex_pos = 1.0 - 0.000001;
 }
 
-static void	calculate_wall_x_xaxis(t_player *player, t_dda *dda,
-		t_dpoint ray_dir, t_ray *ray)
+double	calculate_wall_hit_position_x(t_dda *dda, t_player *player,
+		t_dpoint ray_dir)
 {
-	double	wall_x;
+	double	intersection_dis;
+	double	wall_hit_pos;
 
-	wall_x = player->y + ((dda->map_x - player->x / BLOCK_SIZE + (1
-					- dda->step_x) / 2) / ray_dir.x) * ray_dir.y * BLOCK_SIZE;
-	calculate_texture_position(wall_x, ray);
+	intersection_dis = (dda->map_x - player->x / BLOCK_SIZE + (1 - dda->step_x)
+			/ 2) / ray_dir.x;
+	wall_hit_pos = (player->y / BLOCK_SIZE) + intersection_dis * ray_dir.y;
+	wall_hit_pos = fmod(wall_hit_pos, 1.0);
+	if (wall_hit_pos < 0.0)
+		wall_hit_pos += 1.0;
+	return (wall_hit_pos);
 }
 
-static void	calculate_wall_x_yaxis(t_player *player, t_dda *dda,
-		t_dpoint ray_dir, t_ray *ray)
+double	calculate_wall_hit_position_y(t_dda *dda, t_player *player,
+		t_dpoint ray_dir)
 {
-	double	wall_x;
+	double	intersection_dis;
+	double	wall_hit_pos;
 
-	wall_x = player->x + ((dda->map_y - player->y / BLOCK_SIZE + (1
-					- dda->step_y) / 2) / ray_dir.y) * ray_dir.x * BLOCK_SIZE;
-	calculate_texture_position(wall_x, ray);
+	intersection_dis = (dda->map_y - player->y / BLOCK_SIZE + (1 - dda->step_y)
+			/ 2) / ray_dir.y;
+	wall_hit_pos = (player->x / BLOCK_SIZE) + intersection_dis * ray_dir.x;
+	wall_hit_pos = fmod(wall_hit_pos, 1.0);
+	if (wall_hit_pos < 0.0)
+		wall_hit_pos += 1.0;
+	return (wall_hit_pos);
 }
 
 void	get_wall_texture_dda(t_ray *ray, t_dda *dda, t_player *player,
 		t_dpoint ray_dir)
 {
+	double	wall_hit_pos;
+
 	if (dda->side == 0)
 	{
 		if (dda->step_x < 0)
 			ray->tex = TEX_WEST;
 		else
 			ray->tex = TEX_EAST;
-		calculate_wall_x_xaxis(player, dda, ray_dir, ray);
+		wall_hit_pos = calculate_wall_hit_position_x(dda, player, ray_dir);
 	}
 	else
 	{
@@ -82,8 +102,9 @@ void	get_wall_texture_dda(t_ray *ray, t_dda *dda, t_player *player,
 			ray->tex = TEX_NORTH;
 		else
 			ray->tex = TEX_SOUTH;
-		calculate_wall_x_yaxis(player, dda, ray_dir, ray);
+		wall_hit_pos = calculate_wall_hit_position_y(dda, player, ray_dir);
 	}
+	ray->tex_pos = wall_hit_pos;
 	if (ray->tex_pos < 0.0)
 		ray->tex_pos = 0.0;
 	if (ray->tex_pos >= 1.0)

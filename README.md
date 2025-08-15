@@ -626,12 +626,12 @@ When reporting bugs, please include:
 ## 👥 Authors
 
 **Team Members:**
-- **sngantch** - Lead Developer
+- **sngantch - Simeon** 
   - Core raycasting engine
   - Performance optimization
   - Graphics rendering system
 
-- **hmensah-** - Systems Developer  
+- **hmensah - Hackeem**
   - Map parsing system
   - Configuration management
   - Input validation

@@ -31,7 +31,8 @@ CORE_SRC = $(SRC_DIR)/main.c
 # Raycasting files
 RAYCASTING_SRC = $(SRC_DIR)/raycasting/raycasting.c \
 				 $(SRC_DIR)/raycasting/raycasting_utils.c \
-				 $(SRC_DIR)/raycasting/render.c
+				 $(SRC_DIR)/raycasting/render.c \
+				 $(SRC_DIR)/raycasting/render_utils.c
 
 # Player management
 PLAYER_SRC = $(SRC_DIR)/player/player.c \

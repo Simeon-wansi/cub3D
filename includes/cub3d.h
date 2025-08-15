@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 22:34:45 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/07 00:56:26 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/15 17:18:14 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@
 # define COLOR_BLACK 0x000000
 # define COLOR_CYAN 0x00FFFF
 # define COLOR_YELLOW 0xFFFF00
+# define COLOR_GREY 0x808080
 
 /* ========== MAP CHARACTERS ========== */
 # define EMPTY '0'

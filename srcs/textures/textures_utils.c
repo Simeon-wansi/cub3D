@@ -6,28 +6,36 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 19:52:47 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/25 20:00:16 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/15 20:53:31 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
 void	extract_color_from_texture(t_texture **texture, t_render *render,
-	int index)
+		int index)
 {
+	unsigned char	*pixel;
+	unsigned short	color16;
+	int				r;
+	int				g;
+	int				b;
+
+	pixel = (unsigned char *)((*texture)->addr + index);
 	if ((*texture)->bpp == 32)
-	{
-		render->color = *(int *)((*texture)->addr + index);
-		render->color &= 0x00FFFFFF;
-	}
+		render->color = (pixel[2] << 16) | (pixel[1] << 8) | pixel[0];
 	else if ((*texture)->bpp == 24)
-		render->color = ((unsigned char)(*texture)->addr[index
-				+ 2] << 16) | ((unsigned char)(*texture)->addr[index
-				+ 1] << 8) | (unsigned char)(*texture)->addr[index];
+		render->color = (pixel[2] << 16) | (pixel[1] << 8) | pixel[0];
+	else if ((*texture)->bpp == 16)
+	{
+		color16 = *(unsigned short *)pixel;
+		r = ((color16 >> 11) & 0x1F) << 3;
+		g = ((color16 >> 5) & 0x3F) << 2;
+		b = (color16 & 0x1F) << 3;
+		render->color = (r << 16) | (g << 8) | b;
+	}
 	else
-		render->color = ((unsigned char)(*texture)->addr[index
-				+ 2] << 16) | ((unsigned char)(*texture)->addr[index
-				+ 1] << 8) | (unsigned char)(*texture)->addr[index];
+		render->color = 0x808080;
 }
 
 void	initiate_texture(t_game *game)

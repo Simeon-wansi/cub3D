@@ -6,67 +6,23 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 19:37:33 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/24 22:36:47 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/15 20:51:03 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-void	render_3d(t_game *game, t_ray *ray, int column)
+static void	get_texture_color(t_texture *texture, t_point *t, int *index)
 {
-	t_render	render;
-	t_texture	*texture;
-	int			ty;
-	int			index;
-
-	game->ray = *ray;
-	calculate_render_properties(game, column, &render, &texture);
-	while (render.start_y < render.end)
-	{
-		ty = (int)render.texture_y;
-		if (ty < 0)
-			ty = 0;
-		if (ty >= texture->height)
-			ty = texture->height - 1;
-		index = ty * texture->line_length + render.texture_x * (texture->bpp
-				/ 8);
-		if (index >= 0 && index + (texture->bpp / 8) <= texture->height
-			* texture->line_length)
-			extract_color_from_texture(&texture, &render, index);
-		else
-			render.color = COLOR_WHITE;
-		put_pixel(column, render.start_y, render.color, game);
-		render.texture_y += render.step;
-		render.start_y++;
-	}
-}
-
-void	draw_minimap(t_game *game)
-{
-	t_point	p;
-	t_point	player;
-	t_point	dir;
-
-	p.y = 0;
-	while (game->map.grid[p.y])
-	{
-		p.x = 0;
-		while (game->map.grid[p.y][p.x])
-		{
-			if (game->map.grid[p.y][p.x] == '1')
-				draw_filled_square((t_point){p.x * TILE_SIZE, p.y * TILE_SIZE},
-					TILE_SIZE, COLOR_RED, game);
-			p.x++;
-		}
-		p.y++;
-	}
-	player.x = (int)((float)game->player.x / BLOCK_SIZE * TILE_SIZE);
-	player.y = (int)((float)game->player.y / BLOCK_SIZE * TILE_SIZE);
-	draw_filled_square((t_point){player.x - TILE_SIZE / 4, player.y - TILE_SIZE
-		/ 4}, TILE_SIZE / 2, COLOR_BLUE, game);
-	dir.x = player.x + (int)(game->player.dx * TILE_SIZE);
-	dir.y = player.y + (int)(game->player.dy * TILE_SIZE);
-	draw_line(player, dir, COLOR_GREEN, game);
+	if (t->y < 0)
+		t->y = 0;
+	if (t->y >= texture->height)
+		t->y = texture->height - 1;
+	if (t->x < 0)
+		t->x = 0;
+	if (t->x >= texture->width)
+		t->x = texture->width - 1;
+	*index = t->y * texture->line_length + t->x * (texture->bpp / 8);
 }
 
 static void	update_game_state(t_game *game, t_player *player)
@@ -105,24 +61,42 @@ int	game_loop(t_game *game)
 	return (0);
 }
 
+static void	calculate_texture_properties(t_ray *ray, t_render *render,
+		t_texture *texture)
+{
+	double	clamped_tex_pos;
+
+	if (ray->tex < 0 || ray->tex >= 4)
+		ray->tex = 0;
+	render->step = (double)texture->height / (double)render->height;
+	if (render->height <= 0)
+		render->step = 1.0;
+	clamped_tex_pos = ray->tex_pos;
+	if (clamped_tex_pos < 0.0)
+		clamped_tex_pos = 0.0;
+	if (clamped_tex_pos >= 1.0)
+		clamped_tex_pos = 0.999999;
+	render->texture_x = (int)(clamped_tex_pos * (double)texture->width);
+	if (render->texture_x < 0)
+		render->texture_x = 0;
+	if (render->texture_x >= texture->width)
+		render->texture_x = texture->width - 1;
+}
+
 void	calculate_render_properties(t_game *game, int column, t_render *render,
 		t_texture **texture)
 {
 	t_ray	*ray;
 
 	ray = &game->ray;
-	render->height = (BLOCK_SIZE / ray->dist) * (WINDOW_HEIGHT / 2);
+	render->height = (int)(double)BLOCK_SIZE / ray->dist * (WINDOW_HEIGHT / 2);
 	render->start_y = (WINDOW_HEIGHT - render->height) / 2;
 	render->end = render->start_y + render->height;
+	if (render->start_y < 0)
+		render->start_y = 0;
+	if (render->end > WINDOW_HEIGHT)
+		render->end = WINDOW_HEIGHT;
 	draw_floor_and_ceiling(game, render->start_y, render->end, column);
-	if (ray->tex < 0 || ray->tex >= 4)
-		ray->tex = 0;
 	(*texture) = &game->textures[ray->tex];
-	render->step = (double)(*texture)->height / render->height;
-	render->texture_y = 0;
-	render->texture_x = (int)(ray->tex_pos * (*texture)->width);
-	if (render->texture_x < 0)
-		render->texture_x = 0;
-	if (render->texture_x >= (*texture)->width)
-		render->texture_x = (*texture)->width - 1;
+	calculate_texture_properties(ray, render, *texture);
 }
