@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 22:34:45 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/15 17:18:14 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/16 15:38:18 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 # define WINDOW_WIDTH 750
 # define WINDOW_HEIGHT 600
 # define MINIMAP_SCALE 0.2
+# define MIN_DISTANCE 6
 
 /* ========== GAME CONSTANTS ========== */
 # define MOVE_SPEED 5.0

@@ -6,24 +6,13 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 19:37:33 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/15 20:51:03 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/16 15:21:38 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-static void	get_texture_color(t_texture *texture, t_point *t, int *index)
-{
-	if (t->y < 0)
-		t->y = 0;
-	if (t->y >= texture->height)
-		t->y = texture->height - 1;
-	if (t->x < 0)
-		t->x = 0;
-	if (t->x >= texture->width)
-		t->x = texture->width - 1;
-	*index = t->y * texture->line_length + t->x * (texture->bpp / 8);
-}
+
 
 static void	update_game_state(t_game *game, t_player *player)
 {
