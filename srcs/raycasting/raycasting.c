@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 17:51:46 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/24 22:13:29 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/19 12:56:39 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,15 @@ int	perform_dda(t_dda *dda, t_game *game)
 	return (hit);
 }
 
+/**
+ * Draws a line of the 3D scene using the DDA algorithm.
+ * player: The player's position and angle.
+ * game: The game's data.
+ * start_x: The starting angle of the line to draw.
+ * column: The column index of the line to draw.
+ * raw_dist: The distance from the player to the wall.
+ * Now we calcule the ray.dist with to avoide the fisheye
+ */
 void	draw_lines_dda(t_player *player, t_game *game, float start_x,
 		int column)
 {
@@ -95,13 +104,15 @@ void	draw_lines_dda(t_player *player, t_game *game, float start_x,
 	t_dda	dda;
 	double	ray_dir_x;
 	double	ray_dir_y;
+	double	raw_dist;
 
 	ray_dir_x = cos(start_x);
 	ray_dir_y = sin(start_x);
 	init_dda(&dda, player, ray_dir_x, ray_dir_y);
 	if (perform_dda(&dda, game))
 	{
-		ray.dist = calculate_dda_distance(&dda, player, ray_dir_x, ray_dir_y);
+		raw_dist = calculate_dda_distance(&dda, player, ray_dir_x, ray_dir_y);
+		ray.dist = raw_dist * cos(start_x - player->angle);
 		if (ray.dist <= 0 || isnan(ray.dist) || isinf(ray.dist))
 			ray.dist = 1.0;
 		get_wall_texture_dda(&ray, &dda, player, (t_dpoint){ray_dir_x,

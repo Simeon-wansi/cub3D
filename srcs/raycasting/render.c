@@ -6,13 +6,11 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 19:37:33 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/16 15:21:38 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/19 12:57:12 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
-
-
 
 static void	update_game_state(t_game *game, t_player *player)
 {
