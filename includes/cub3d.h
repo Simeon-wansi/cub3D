@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 22:34:45 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/16 15:38:18 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/20 20:07:47 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,16 @@
 # define COLOR_CYAN 0x00FFFF
 # define COLOR_YELLOW 0xFFFF00
 # define COLOR_GREY 0x808080
+
+/* ========== SHOW MSG COLORS ========== */
+# define R_CL "\033[0m"
+# define B_CYN "\033[1;36m"
+# define B_YL "\033[1;33m"
+# define B_GN "\033[1;32m"
+# define B_BL "\033[1;34m"
+# define B_RD "\033[1;31m"
+# define B_MG "\033[1;35m"
+# define B_WH "\033[1;37m"
 
 /* ========== MAP CHARACTERS ========== */
 # define EMPTY '0'

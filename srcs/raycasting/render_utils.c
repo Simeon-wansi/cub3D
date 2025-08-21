@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 20:48:46 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/16 15:21:46 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/20 20:29:49 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@ static void	get_texture_color(t_texture *texture, t_point *t, int *index)
 		t->x = texture->width - 1;
 	*index = t->y * texture->line_length + t->x * (texture->bpp / 8);
 }
+
+/**
+ * Renders a single column of pixels on the screen 
+ * by casting a ray and mapping it to a 3D texture.
+ * Calculates rendering properties, 
+ * extracts texture colors, and draws pixels from top to bottom.
+*/
 
 void	render_3d(t_game *game, t_ray *ray, int column)
 {
@@ -50,6 +57,14 @@ void	render_3d(t_game *game, t_ray *ray, int column)
 		render.start_y++;
 	}
 }
+/**
+ * Draws a minimap representation of the game's map and player.
+ * Iterates through the game's map grid to render walls
+ * and the player's position.
+ * The player's direction is also visualized with a line.
+ * The minimap is scaled down using TILE_SIZE.
+ * This function is used for in-game navigation and orientation.
+ */
 
 void	draw_minimap(t_game *game)
 {

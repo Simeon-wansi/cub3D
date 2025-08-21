@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 19:37:33 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/19 12:57:12 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/20 20:08:34 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ static void	update_game_state(t_game *game, t_player *player)
 	game->perf.ray_cast = 0;
 	fast_clear_image(game);
 }
+
+// Main game loop function.
+// Updates game state and renders the scene.
+// Handles user interface and performance tracking.
+// Continues until game is stopped.
 
 int	game_loop(t_game *game)
 {

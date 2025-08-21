@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 17:51:46 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/19 12:56:39 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/20 20:29:42 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,16 @@ static double	calculate_dda_distance(t_dda *dda, t_player *player,
 	return (perp_wall_dist * BLOCK_SIZE);
 }
 
+/**
+ * Performs a Digital Differential Analyzer (DDA) algorithm 
+ * to detect ray intersection with walls in a 2D game map.
+ * Iterates through the map, updating the ray's position 
+ * and checking for collisions with walls.
+ * Returns 1 if a hit is found, indicating a wall intersection, and 0 otherwise.
+ * Used in raycasting algorithms to render 3D scenes from 2D maps.
+ * Stops iterating after reaching the map's boundaries or finding a wall.
+ */
+
 int	perform_dda(t_dda *dda, t_game *game)
 {
 	int	hit;
@@ -97,6 +107,7 @@ int	perform_dda(t_dda *dda, t_game *game)
  * raw_dist: The distance from the player to the wall.
  * Now we calcule the ray.dist with to avoide the fisheye
  */
+
 void	draw_lines_dda(t_player *player, t_game *game, float start_x,
 		int column)
 {
